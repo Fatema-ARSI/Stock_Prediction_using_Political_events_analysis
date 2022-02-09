@@ -17,5 +17,7 @@ yahoo-fin==0.8.9.1
 datetime==4.3  
 sklearn==0.0  
 pyportfolioopt==1.5.1 
+keras==2.6.0                    
+keras-preprocessing==1.1.2  
 
 
