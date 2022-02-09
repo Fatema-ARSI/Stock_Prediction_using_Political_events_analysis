@@ -4,7 +4,7 @@ import pandas as pd
 import datetime
 
 
-import tensorflow.keras.models.load_model
+import keras.models.load_model
 
 from sklearn.preprocessing import StandardScaler
 from pandas.core.reshape.merge import merge
@@ -18,7 +18,7 @@ def get_predictions(data):
     df_for_training=data[cols].astype(float)
     train_dates=pd.to_datetime(data['Date'])
 
-    model=tf.keras.load_model('stock_prediction.h5')
+    model=keras.load_model('stock_prediction.h5')
 
     forecast_period_dates=pd.date_range(list(train_dates)[-1],periods=n_futuredays,freq='1d').tolist()
 
