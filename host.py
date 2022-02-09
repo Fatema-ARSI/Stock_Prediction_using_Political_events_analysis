@@ -2,7 +2,7 @@ from hydralit import HydraApp
 import streamlit as st
 from home import home_page
 from part1 import regression_analysis
-from part2 import stock_prediction
+#from part2 import stock_prediction
 from part3 import portfolio_optimization
 
 
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     app.add_app("Home", icon="", app=home_page(),is_home=True)
 
     app.add_app("Regression on Stocks", icon="", app=regression_analysis())
-    app.add_app("Stock prediction using News-Events Analysis", icon="", app=stock_prediction())
+    #app.add_app("Stock prediction using News-Events Analysis", icon="", app=stock_prediction())
     app.add_app("Portfolio Optimization using Efficient Frontier Theory", icon="", app=portfolio_optimization())
 
 
