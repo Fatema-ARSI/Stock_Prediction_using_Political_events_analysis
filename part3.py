@@ -11,10 +11,9 @@ import yahoo_fin.stock_info as si
 from pypfopt.efficient_frontier import EfficientFrontier
 from pypfopt import risk_models
 from pypfopt import expected_returns
-
-import cvxpy
-
+from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
 import yahoo_fin.stock_info as si
+
 #add an import to Hydralit
 from hydralit import HydraHeadApp
 
