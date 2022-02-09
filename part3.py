@@ -32,7 +32,7 @@ class portfolio_optimization(HydraHeadApp):
         st.sidebar.header('User Input Features')
         Amount=st.sidebar.number_input('Put your investment amount here')
         tickers=si.tickers_sp500()
-        selected_stocks = st.sidebar.multiselect('Stock ticker', tickers) # Select ticker symbol
+        selected_stocks = st.sidebar.multiselect('Stock ticker', tickers,['AAPL','FB','MSFT','AMZN','TSLA']) # Select ticker symbol
         selected_start_date=st.sidebar.date_input('Select Start Date',datetime.date(2019,7,6))
         selected_end_date=st.sidebar.date_input('Select Start Date',datetime.date(2020,7,6))
 
