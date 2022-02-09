@@ -1,24 +1,23 @@
 streamlit==1.5.1
-plotly
+plotly==5.5.0
 hydralit==1.0.12             
 hydralit-components==1.0.9
-pandas
-requests
-requests-html
-numpy
-yfinance
-textblob
-vadersentiment   
-bs4
-matplotlib
-statsmodels
-scipy
-yahoo-fin
-datetime
-sklearn
-pyportfolioopt
-keras
-tensorflow
+pandas==1.1.5
+requests==2.27.1 
+requests-html==0.10.0
+numpy==1.19.5
+yfinance==0.1.70
+textblob==0.17.1 
+vadersentiment==3.3.2
+bs4==0.0.1 
+matplotlib==3.3.4
+statsmodels==0.12.
+scipy==1.5.4
+yahoo-fin==0.8.9.1
+datetime==4.3 
+sklearn==0.0
+pyportfolioopt==1.5.1
+
 
                  
               
