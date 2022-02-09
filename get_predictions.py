@@ -3,8 +3,8 @@ import numpy as np
 import pandas as pd
 import datetime
 
-import tensorflow as tf
-import tf.keras.models.load_model
+
+import tensorflow.keras.models.load_model
 
 from sklearn.preprocessing import StandardScaler
 from pandas.core.reshape.merge import merge
