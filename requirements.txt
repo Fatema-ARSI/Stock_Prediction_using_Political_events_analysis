@@ -18,7 +18,7 @@ datetime
 sklearn
 pyportfolioopt
 keras
-tensorflow==2.6.2  
+tensorflow
 
                  
               
