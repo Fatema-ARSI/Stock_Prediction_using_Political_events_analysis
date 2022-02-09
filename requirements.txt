@@ -11,7 +11,7 @@ textblob==0.17.1
 vadersentiment==3.3.2
 bs4==0.0.1 
 matplotlib==3.3.4
-statsmodels==
+statsmodels
 scipy
 yahoo-fin==0.8.9.1
 datetime==4.3 
