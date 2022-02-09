@@ -19,7 +19,7 @@ from get_plot_data import get_plot_data1, get_plot_data2
 from hydralit import HydraHeadApp
 
 #create a wrapper class
-class tock_prediction(HydraHeadApp):
+class stock_prediction(HydraHeadApp):
 
 #wrap all your code in this method and you should be done
     def run(self):
