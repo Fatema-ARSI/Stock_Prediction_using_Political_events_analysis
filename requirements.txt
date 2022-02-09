@@ -1,7 +1,7 @@
-streamlit
+streamlit==1.5.1
 plotly
-hydralit              
-hydralit-components
+hydralit==1.0.12             
+hydralit-components==1.0.9
 pandas
 requests
 requests-html
