@@ -9,7 +9,7 @@ import datetime
 import plotly.graph_objs as go
 import plotly.io as pio
 from plotly.offline import init_notebook_mode,iplot
-from functools import reduce
+
 
 
 from today_signal import today_signal
@@ -32,10 +32,10 @@ class stock_prediction(HydraHeadApp):
         ###SIDEBAR section
         st.sidebar.header('User Input Features')
         tickers=si.tickers_sp500()
-        selected_stock=st.sidebar.multiselect('Select Stock',tickers,['AAPL','FB','MSFT','AMZN','TSLA'])
-        selected_start_date=st.sidebar.date_input('Select Start Date',datetime.date(2014,1,2))
-        selected_end_date=st.sidebar.date_input('Select Start Date',datetime.date(2022,1,1))
-        n_futuredays=st.sidebar.selectbox('Select Future Days to Predict',futuredays,index=4)
+        selected_stock=st.sidebar.multiselect('Select Stock (Maximum 5)',tickers,['AAPL','FB','MSFT','AMZN','TSLA'])
+        selected_start_date='2014-01-02'
+        selected_end_date='2022-01-01'
+        
         num_company=st.sidebar.slider('Number of Stock Prediction To Show',1,5,2)
 
         ####################################################
@@ -64,6 +64,8 @@ class stock_prediction(HydraHeadApp):
         ########data download#################################################
 
         #get stock value
+     
+            
 
         df1 = get_self_made_data_frame(selected_stock[0],selected_start_date,selected_end_date)
         df1.reset_index(inplace=True)
@@ -94,15 +96,7 @@ class stock_prediction(HydraHeadApp):
         df_forecast3=get_predictions(df3)
         df_forecast4=get_predictions(df4)
         df_forecast5=get_predictions(df5)
-        
-        df_forecast=[df_forecast1,df_forecast2,df_forecast3,df_forecast4,df_forecast5]
-        df_merged = reduce(lambda  left,right: pd.merge(left,right,on=['Date'],how='outer'), df_forecast)
-        df_merged.columns.values[1] = selected_stock[0]
-        df_merged.columns.values[2] = selected_stock[1]
-        df_merged.columns.values[3] =selected_stock[2]
-        df_merged.columns.values[4] = selected_stock[3]
-        df_merged.columns.values[5] =selected_stock[4]
-        
+      
         
         
         ########@#####################################################################@
