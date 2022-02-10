@@ -108,9 +108,9 @@ class stock_prediction(HydraHeadApp):
         def plot_data(data1,data2):
             
             fig=go.Figure()
-            fig.add_scatter(x=data1['Date'],y=data1['Prediction'],line={'color':'orange'},name='Predicted Data',
+            fig.add_scatter(x=data1['Date'],y=data1['Prediction'],line={'color':'blue'},name='Predicted Data',
                             hovertemplate="Date: %{x}<br>Predicted Close Price: %{y}<br>HOLD<extra></extra>",opacity=0.5)
-            fig.add_scatter(x=data2['Date'],y=data2['Close'],line={'color':'blue'},name='Actual Data',
+            fig.add_scatter(x=data2['Date'],y=data2['Close'],line={'color':'orange'},name='Actual Data',
                             hovertemplate="Date: %{x}<br>Close Price: %{y}<br>HOLD<extra></extra>",opacity=0.5)
 
             fig.update_xaxes(rangeslider_visible=False,rangeselector=dict(buttons=list ([dict(count=1,label='1m',step='month',stepmode='backward'),
