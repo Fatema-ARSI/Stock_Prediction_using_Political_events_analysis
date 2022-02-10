@@ -60,7 +60,7 @@ class portfolio_optimization(HydraHeadApp):
         st.write("Expected annual return {:.2f}".format(data[0]*100)+'%')
         st.write("Expected annual risk {:.2f}".format(data[1] * 100)+'%')
         st.write("Sharpe Ratio {:.2f}".format(data[2])+'%')
-        st.write(shares_allocations[0,0],annotated_text((df.iloc[0,1],'Shares','color')))
+        annotated_text(shares_allocations[0,0],((df.iloc[0,1],'Shares','color')))
         st.write("Funds remaining: EURO {:.2f}".format(leftover))
         
         labels=df["Stocks"]
