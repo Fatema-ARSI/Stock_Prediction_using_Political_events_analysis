@@ -101,7 +101,7 @@ class stock_prediction(HydraHeadApp):
         df_merged.columns.values[3] =selected_stock[2]
         df_merged.columns.values[4] = selected_stock[3]
         df_merged.columns.values[5] =selected_stock[4]
-        df_merged.to_csv('stockspredictions.csv',index=False)
+        open('df_merged.csv','w').write(df_merged.to_csv())
 
         ########@#####################################################################@
         #get the plot data
