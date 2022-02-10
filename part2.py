@@ -4,6 +4,7 @@ import yfinance as yf
 import yahoo_fin.stock_info as si
 import pandas as pd
 import datetime
+import os
 
 import plotly.graph_objs as go
 import plotly.io as pio
@@ -101,8 +102,9 @@ class stock_prediction(HydraHeadApp):
         df_merged.columns.values[3] =selected_stock[2]
         df_merged.columns.values[4] = selected_stock[3]
         df_merged.columns.values[5] =selected_stock[4]
-        open('df_merged.csv','w').write(df_merged.to_csv())
-
+        with open(os.path.join("fileDir",df_merged.name),"wb") as f:
+            f.write((df_merged).getbuffer())
+        
         ########@#####################################################################@
         #get the plot data
 
