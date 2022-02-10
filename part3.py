@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import datetime
+from annotated_text import annotated_text
 from pypfopt.efficient_frontier import EfficientFrontier
 from pypfopt import risk_models
 from pypfopt import expected_returns
