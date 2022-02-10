@@ -17,6 +17,5 @@ statsmodels==0.12.2
 scipy==1.5.4
 yahoo-fin==0.8.9.1
 datetime==4.3  
-keras
 tensorflow
 sklearn==0.0 
