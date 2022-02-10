@@ -9,6 +9,12 @@ from pypfopt import expected_returns
 from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
 import plotly.graph_objects as go
 
+import yahoo_fin.stock_info as si
+import yfinance as yf
+from get_data import get_self_made_data_frame
+from get_predictions import get_predictions
+from functools import reduce
+
 
 #add an import to Hydralit
 from hydralit import HydraHeadApp
@@ -25,13 +31,44 @@ class portfolio_optimization(HydraHeadApp):
 
         #sidebar section
         st.sidebar.header('User Input Features')
+        tickers=si.tickers_sp500()
         Amount=st.sidebar.number_input('Put your investment amount here',2000)
+        selected_stock=st.sidebar.multiselect('Select Stock (Maximum 5)',tickers,['AAPL','FB','MSFT','AMZN','TSLA'])
+        selected_start_date='2014-01-02'
+        selected_end_date='2022-01-01'
         
 
         ####################################################
 
-        #Store the adjusted close price of stock into the data frame
-        df=
+        #Store the predicted stocks data into the data frame
+        df1 = get_self_made_data_frame(selected_stock[0],selected_start_date,selected_end_date)
+        df1.reset_index(inplace=True)
+
+        df2 = get_self_made_data_frame(selected_stock[1],selected_start_date,selected_end_date)
+        df2.reset_index(inplace=True)
+
+        df3 = get_self_made_data_frame(selected_stock[2],selected_start_date,selected_end_date)
+        df3.reset_index(inplace=True)
+
+        df4 = get_self_made_data_frame(selected_stock[3],selected_start_date,selected_end_date)
+        df4.reset_index(inplace=True)
+
+        df5 = get_self_made_data_frame(selected_stock[4],selected_start_date,selected_end_date)
+        df5.reset_index(inplace=True)
+        
+        df_forecast1=get_predictions(df1)
+        df_forecast2=get_predictions(df2)
+        df_forecast3=get_predictions(df3)
+        df_forecast4=get_predictions(df4)
+        df_forecast5=get_predictions(df5)
+        
+        df_forecast=[df_forecast1,df_forecast2,df_forecast3,df_forecast4,df_forecast5]
+        df = reduce(lambda  left,right: pd.merge(left,right,on=['Date'],how='outer'), df_forecast)
+        df.columns.values[1] = selected_stock[0]
+        df.columns.values[2] = selected_stock[1]
+        df.columns.values[3] =selected_stock[2]
+        df.columns.values[4] = selected_stock[3]
+        df.columns.values[5] =selected_stock[4]
         df.set_index('Date',inplace=True)
         #assign equivalent weights to each stock within the portfolio
         length=len(df)
