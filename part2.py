@@ -179,8 +179,6 @@ class stock_prediction(HydraHeadApp):
         for i in list(figs)[:num_company]:
             st.plotly_chart(i,use_container_width=True)
            
-        if st.button('Show Model Prediction'):
-            st.dataframe(df)
-
+        
 
        
