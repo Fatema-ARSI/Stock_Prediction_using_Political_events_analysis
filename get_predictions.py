@@ -3,8 +3,8 @@ import numpy as np
 import pandas as pd
 import datetime
 
+import tensorflow
 
-from keras.models import load_model
 
 from sklearn.preprocessing import StandardScaler
 from pandas.core.reshape.merge import merge
@@ -17,7 +17,7 @@ def get_predictions(data):
   df_for_training=data[cols].astype(float)
   train_dates=pd.to_datetime(data['Date'])
   
-  scaler=sklearn.preprocessing.StandardScaler()
+  scaler=StandardScaler()
   scaler=scaler.fit(df_for_training)
   df_for_training_scaled=scaler.transform(df_for_training)
 
@@ -32,7 +32,7 @@ def get_predictions(data):
 
   train_x,train_y=np.array(train_x),np.array(train_y)
 
-  model=keras.models.load_model('stock_prediction (1).h5')
+  model=tf.keras.models.load_model('stock_prediction (1).h5')
 
   
   
