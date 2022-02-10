@@ -102,10 +102,13 @@ class portfolio_optimization(HydraHeadApp):
         annotated_text(shares_allocations[0,0],(df.iloc[0,1],"Shares","#8ef"))
         st.write("Funds remaining: EURO {:.2f}".format(leftover))
         
-        labels=df["Stocks"]
-        values=df["Shares"]
+        labels=shares_allocations["Stocks"]
+        values=shares_allocations["Shares"]
         colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen']
         fig = go.Figure(data=[go.Pie(labels=labels,values=values)])
         fig.update_traces(hoverinfo='label+value+percent', textinfo='value', textfont_size=20,
                           marker=dict(colors=colors, line=dict(color='#000000', width=2)))
         st.plotlychart(fig)
+        
+        if st.button('Show Portfolio Allocation'):
+            st.dataframe(shares_allocations)
