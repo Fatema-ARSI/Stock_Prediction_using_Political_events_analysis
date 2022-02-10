@@ -10,6 +10,7 @@ from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
 import plotly.graph_objects as go
 from part2 import stockpred_data
 
+
 #add an import to Hydralit
 from hydralit import HydraHeadApp
 
