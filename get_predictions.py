@@ -32,7 +32,7 @@ def get_predictions(data):
 
   train_x,train_y=np.array(train_x),np.array(train_y)
 
-  model=tf.keras.models.load_model('stock_prediction (1).h5')
+  model=tf.keras.models.load_model('stock_prediction.h5')
 
   
   
