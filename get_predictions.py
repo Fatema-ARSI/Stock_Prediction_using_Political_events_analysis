@@ -11,6 +11,8 @@ from pandas.core.reshape.merge import merge
 
 
 
+
+
 def get_predictions(data):
   #variables for training
   cols=list(data)[1:11]
@@ -35,7 +37,7 @@ def get_predictions(data):
   model=tf.keras.models.load_model('stock_prediction.h5')
 
   
-  
+  n_futuredays=90
   forecast_period_dates=pd.date_range(list(train_dates)[-1],periods=n_futuredays,freq='1d').tolist()
 
   forecast=model.predict(train_x[-n_futuredays:])
