@@ -112,11 +112,11 @@ class stock_prediction(HydraHeadApp):
         main_line4=get_plot_data1(df4,df_forecast4)
         main_line5=get_plot_data1(df5,df_forecast5)
 
-        signals1=get_plot_data2(main-line1,df1,df_forecast1)
-        signals2=get_plot_data2(main-line2,df2,df_forecast2)
-        signals3=get_plot_data2(main-line3,df3,df_forecast3)
-        signals4=get_plot_data2(main-line4,df4,df_forecast4)
-        signals5=get_plot_data2(main-line5,df5,df_forecast5)
+        signals1=get_plot_data2(main_line1,df1,df_forecast1)
+        signals2=get_plot_data2(main_line2,df2,df_forecast2)
+        signals3=get_plot_data2(main_line3,df3,df_forecast3)
+        signals4=get_plot_data2(main_line4,df4,df_forecast4)
+        signals5=get_plot_data2(main_line5,df5,df_forecast5)
 
 
 
