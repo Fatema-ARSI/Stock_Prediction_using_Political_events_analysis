@@ -8,6 +8,7 @@ import datetime
 import plotly.graph_objs as go
 import plotly.io as pio
 from plotly.offline import init_notebook_mode,iplot
+from functools import reduce
 
 
 from today_signal import today_signal
