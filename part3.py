@@ -8,7 +8,6 @@ from pypfopt import risk_models
 from pypfopt import expected_returns
 from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
 import plotly.graph_objects as go
-from part2 import stockpred_data
 
 
 #add an import to Hydralit
@@ -32,7 +31,7 @@ class portfolio_optimization(HydraHeadApp):
         ####################################################
 
         #Store the adjusted close price of stock into the data frame
-        df=stockpred_data()
+        df=
         df.set_index('Date',inplace=True)
         #assign equivalent weights to each stock within the portfolio
         length=len(df)
