@@ -31,8 +31,8 @@ class stock_prediction(HydraHeadApp):
         st.sidebar.header('User Input Features')
         tickers=si.tickers_sp500()
         selected_stock=st.sidebar.multiselect('Select Stock',tickers,['AAPL','FB','MSFT','AMZN','TSLA'])
-        selected_start_date=st.sidebar.date_input('Select Start Date',datetime.date(2009,8,8))
-        selected_end_date=st.sidebar.date_input('Select Start Date',datetime.date(2015,7,2))
+        selected_start_date=st.sidebar.date_input('Select Start Date',datetime.date(2014,1,2))
+        selected_end_date=st.sidebar.date_input('Select Start Date',datetime.date(2022,1,1))
         n_futuredays=st.sidebar.selectbox('Select Future Days to Predict',futuredays,index=4)
         num_company=st.sidebar.slider('Number of Stock Prediction To Show',1,5,2)
 
