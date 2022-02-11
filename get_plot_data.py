@@ -6,14 +6,14 @@ import pandas as pd
 import datetime
 
 
-@st.experimental_singleton
+
 def get_plot_data1(data1,data2):
 
     main_line=pd.DataFrame(data1[['Date','Close']])
     main_line=main_line.append(data2)
 
     return(main_line)
-@st.experimental_singleton
+
 def get_plot_data2(main_line,data1,data2):
 
     signals=pd.DataFrame()
