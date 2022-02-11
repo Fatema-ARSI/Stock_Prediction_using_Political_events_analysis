@@ -77,7 +77,7 @@ class regression_analysis(HydraHeadApp):
         
         st.write(""" - In the above metrics, the shown alpha and beta calculated using CAPM model, represents how stock well performed and its volatility compare to the market index. """)
         st.write(""" ##### How to interpret the numbers? """)
-        st.write(
+        st.markdown(
 
         " ###### In this case " + str(selected_stock) + " is " + str(alpha_result) + " by " + str(beta_result)
 
