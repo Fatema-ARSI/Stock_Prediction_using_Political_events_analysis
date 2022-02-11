@@ -19,7 +19,7 @@ from hydralit import HydraHeadApp
 class stock_prediction(HydraHeadApp):
 
 #wrap all your code in this method and you should be done
-@st.experimental_memo
+
     def run(self):
         ##############################################################
         ###SIDEBAR section
