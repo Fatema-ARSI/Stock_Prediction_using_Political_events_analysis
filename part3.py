@@ -69,6 +69,9 @@ class portfolio_optimization(HydraHeadApp):
         df[selected_stock[3]]=df_forecast4['Prediction']
         df[selected_stock[4]]=df_forecast5['Prediction']
         
+        
+        st.write('Frontier Efficient theory by Professor Henry for portfolio optimization justifies that from the given set of portfolios with same rate of risk, investor will choose one with higher return.')
+        st.write('This model creates the best fitted portfolio set for the given risk rate to increase the return by allocating the number of shares of non-correlated shares (for diversification of portfolio) for given capital amount. Allocation for given stocks and amount are as follows:')
         df.set_index('Date',inplace=True)
         #assign equivalent weights to each stock within the portfolio
         length=len(df)
@@ -94,6 +97,7 @@ class portfolio_optimization(HydraHeadApp):
         weights = cleaned_weights
         da = DiscreteAllocation(weights, latest_prices, total_portfolio_value=Amount)
         allocation, leftover = da.lp_portfolio()
+        annotated_text(('hii','hii','#ffd127'))
         
         shares_allocations=pd.DataFrame(allocation.items(),columns=["Stocks","Shares"])
         st.write("Expected annual return {:.2f}".format(data[0]*100)+'%')
@@ -101,7 +105,11 @@ class portfolio_optimization(HydraHeadApp):
         st.write("Sharpe Ratio {:.2f}".format(data[2])+'%')
         
         st.write("Funds remaining: EURO {:.2f}".format(leftover))
+        st.write('Sharper ratio is the average return earned in excess of the risk-free rate per unit of volatility or total risk. Usually, any Sharpe ratio greater than 1.0 is considered acceptable to good by investors. A ratio higher than 2.0 is rated as very good. A ratio of 3.0 or higher is considered excellent.')
+ 
+                        
         
+                
         labels=shares_allocations["Stocks"]
         values=shares_allocations["Shares"]
         colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen']
