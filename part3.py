@@ -33,7 +33,7 @@ class portfolio_optimization(HydraHeadApp):
         st.sidebar.header('User Input Features')
         tickers=si.tickers_sp500()
         Amount=st.sidebar.number_input('Put your investment amount here',2000)
-        selected_stock=st.sidebar.multiselect('Select Stock (Maximum 5)',tickers,['AAPL','FB','MSFT','AMZN','TSLA'])
+        selected_stock=st.sidebar.multiselect('Select Stock (Maximum 5)',tickers,['AAPL','V','AZO','JNJ','FDX'])
         selected_start_date='2014-01-02'
         selected_end_date='2022-01-01'
         
