@@ -99,6 +99,33 @@ class portfolio_optimization(HydraHeadApp):
         allocation, leftover = da.lp_portfolio()
         
         for i in allocation:
-            annotated_text(i,(allocation[i],"",""))
+            st.write(i,allocation[i])
+            
+        st.write("Funds remaining: EURO {:.2f}".format(leftover))
+        
+        
+        shares_allocations=pd.DataFrame(allocation.items(),columns=["Stocks","Shares"])
+        
+        labels=shares_allocations["Stocks"]
+        values=shares_allocations["Shares"]
+        colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen']
+        fig = go.Figure(data=[go.Pie(labels=labels,values=values)])
+        fig.update_traces(hoverinfo='label+value+percent', textinfo='value', textfont_size=20,
+                          marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+        st.plotly_chart(fig)
+        
+        st.write("Expected annual return {:.2f}".format(data[0]*100)+'%')
+        
+        st.write("Expected annual risk {:.2f}".format(data[1] * 100)+'%')
+        
+        st.write("Sharpe Ratio {:.2f}".format(data[2])+'%')
+        
+        st.write('Sharper ratio is the average return earned in excess of the risk-free rate per unit of volatility or total risk. Usually, any Sharpe ratio greater than 1.0 is considered acceptable to good by investors. A ratio higher than 2.0 is rated as very good. A ratio of 3.0 or higher is considered excellent.')
+ 
+        
+        
+        if st.button('Portfolio Allocation Table'):
+            st.dataframe(shares_allocations)
+
                                  
         
