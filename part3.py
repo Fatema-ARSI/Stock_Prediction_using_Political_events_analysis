@@ -62,13 +62,13 @@ class portfolio_optimization(HydraHeadApp):
         df_forecast4=get_predictions(df4)
         df_forecast5=get_predictions(df5)
         
-        df_forecast=[df_forecast1,df_forecast2,df_forecast3,df_forecast4,df_forecast5]
-        df = reduce(lambda  left,right: pd.merge(left,right,on=['Date'],how='outer'), df_forecast)
-        df.columns.values[1] = selected_stock[0]
-        df.columns.values[2] = selected_stock[1]
-        df.columns.values[3] =selected_stock[2]
-        df.columns.values[4] = selected_stock[3]
-        df.columns.values[5] =selected_stock[4]
+        df=pd.DataFrame(df_forecast1['Date'])
+        df[selected_stock[0]]=df_forecast1['Prediction']
+        df[selected_stock[1]]=df_forecast2['Prediction']
+        df[selected_stock[2]]=df_forecast3['Prediction']
+        df[selected_stock[3]]=df_forecast4['Prediction']
+        df[selected_stock[4]]=df_forecast5['Prediction']
+        
         df.set_index('Date',inplace=True)
         #assign equivalent weights to each stock within the portfolio
         length=len(df)
