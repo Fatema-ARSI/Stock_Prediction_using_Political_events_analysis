@@ -15,8 +15,8 @@ if __name__ == '__main__':
     app.add_app("Home", icon="", app=home_page(),is_home=True)
 
     app.add_app("Regression on Stocks", icon="", app=regression_analysis())
-    app.add_app("Stock prediction using News-Events Analysis", icon="", app=stock_prediction())
-    app.add_app("Portfolio Optimization using Efficient Frontier Theory", icon="", app=portfolio_optimization())
+    app.add_app("Stock Price prediction", icon="", app=stock_prediction())
+    app.add_app("Portfolio Optimization", icon="", app=portfolio_optimization())
 
 
 
