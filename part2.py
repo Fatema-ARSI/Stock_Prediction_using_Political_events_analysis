@@ -141,9 +141,9 @@ class stock_prediction(HydraHeadApp):
         figs.append(plot_data(main_line4,signals4))
         figs.append(plot_data(main_line5,signals5))
         
-        st.write('News-Events plays important role in Stock Price movement. Hence the effect of a particular news on stock market was calculated and used to train this stock price prediction model which forecast the closing price of stocks for next 500 days along with buy-sell signal indicator.')
+        #st.write('News-Events plays important role in Stock Price movement. Hence the effect of a particular news on stock market was calculated and used to train this stock price prediction model which forecast the closing price of stocks for next 500 days along with buy-sell signal indicator.')
         
-        st.write(' Visual presentation of (selected stocks) can be found through the below charts: ')
+        #st.write(' Visual presentation of (selected stocks) can be found through the below charts: ')
         
         st.header('Stock Closing Price Prediction')
         
