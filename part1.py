@@ -51,6 +51,8 @@ class regression_analysis(HydraHeadApp):
         LR = stats.linregress(ticker_df['daily_ret'].iloc[1:],index_df['daily_ret'].iloc[1:])
         beta,alpha,r_val,p_val,std_err = LR
         
+        st.write(" ###### This page showcase the Regression analysis performed for " + str(selected_stock) + " and stock market index S&P 500 returns to determine the relationship between " + str(selected_stock) + " ’s daily returns and market index.")
+        
         alpha_result=[]
         if alpha<0:
             alpha_result='badly'
@@ -76,7 +78,6 @@ class regression_analysis(HydraHeadApp):
         st.write(" - In the above metrics, the shown alpha and beta calculated using CAPM model, represents how stock well performed and its volatility compare to the market index.")
         st.write(" ##### How to interpret the numbers?")
         st.write(" - Alpha is represented as a number like 1 which means the stock performed better than market index by 1% and for the negative number like -4, its vice a versa. For as Beta, the base number is 1 indicating the volatility of the stock is exactly correlated with the market index and 1.5 its 50% mre volatile than the index.")
-        st.write(" - The " + str(selected_stock) + " has performed " + str(alpha_result) + " compare to S&P 500. Further in terms of volatility, it is " + str(beta_result) + " the market which can be graphically demonstrated below: ")
         
         
         ## Calculate log returns for the period based on Adj Close prices
