@@ -42,7 +42,7 @@ class stock_prediction(HydraHeadApp):
                 
                 
                 
-        st.write('Signal Indicator as of (today) for (selected stocks)')
+        #st.write('Signal Indicator as of (today) for (selected stocks)')
         
         
         
