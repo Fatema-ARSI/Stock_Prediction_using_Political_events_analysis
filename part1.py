@@ -83,7 +83,7 @@ class regression_analysis(HydraHeadApp):
         st.write(" - In the above metrics, the shown alpha and beta calculated using CAPM model, represents how stock well performed and its volatility compare to the market index.")
         st.write(" ##### How to interpret the numbers?")
         st.write(" - Alpha is represented as a number like 1 which means the stock performed better than market index by 1% and for the negative number like -4, its vice a versa. For as Beta, the base number is 1 indicating the volatility of the stock is exactly correlated with the market index and 1.5 its 50% mre volatile than the index.")
-        st.write(" ####### The " + str(selected_stock) + " has performed "+ str(alpha_result)+ " compare to S&P 500. Further in terms of volatility, it is "+ str(beta_result)+ " the market which can be graphically demonstrated below: ")
+        st.write(" ###### The " + str(selected_stock) + " has performed "+ str(alpha_result)+ " compare to S&P 500. Further in terms of volatility, it is "+ str(beta_result)+ " the market which can be graphically demonstrated below: ")
         ## Calculate log returns for the period based on Adj Close prices
 
         ticker_df[selected_stock] = np.log(ticker_df['Adj Close'] / ticker_df['Adj Close'].shift(1))
@@ -130,6 +130,8 @@ class regression_analysis(HydraHeadApp):
         ## show plot
         st.pyplot(plt)
         ### Summarize the model
+        
+        st.write("To get the detailed summary click below")
 
         if st.button('Linear Regression Summary'):
             st.text(slr_sm_model_ko.summary())
