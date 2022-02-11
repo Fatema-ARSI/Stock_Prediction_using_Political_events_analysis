@@ -44,10 +44,7 @@ class regression_analysis(HydraHeadApp):
 
         ####################################################
         
-        #st.write(
-            
-            " - This page showcase the Regression analysis performed for " + str(selected_stock) + " and stock market index S&P 500 returns to determine the relationship between " +  str(selected_stock) + "’s daily returns and market index."
-        )
+        #st.write(" - This page showcase the Regression analysis performed for " + str(selected_stock) + " and stock market index S&P 500 returns to determine the relationship between " +  str(selected_stock) + "’s daily returns and market index.")
         
         ##Metrics Alpha Beta
         ticker_df['daily_ret'] = ticker_df['Close'].pct_change(1)
