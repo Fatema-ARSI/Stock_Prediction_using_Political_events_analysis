@@ -23,7 +23,7 @@ class stock_prediction(HydraHeadApp):
         ###SIDEBAR section
         st.sidebar.header('User Input Features')
         tickers=si.tickers_sp500()
-        selected_stock=st.sidebar.multiselect('Select Stock (Maximum 5)',tickers,['AAPL','V','AZO','JNJ','FDX'])
+        selected_stock=st.sidebar.multiselect('Select Stocks (Maximum 5)',tickers,['AAPL','V','AZO','JNJ','FDX'])
         selected_start_date='2014-01-02'
         selected_end_date='2022-01-01'
         num_company=st.sidebar.slider('Number of Stock Prediction To Show',1,5,2)
@@ -42,7 +42,7 @@ class stock_prediction(HydraHeadApp):
                 
                 
                 
-        #st.write('Signal Indicator as of (today) for (selected stocks)')
+        st.write(" ###### Signal Indicator as of " + datetime.datetime.today().strftime('%Y-%m-%d') + " for " + str(selected_stocks) )
         
         
         
@@ -141,18 +141,18 @@ class stock_prediction(HydraHeadApp):
         figs.append(plot_data(main_line4,signals4))
         figs.append(plot_data(main_line5,signals5))
         
-        #st.write('News-Events plays important role in Stock Price movement. Hence the effect of a particular news on stock market was calculated and used to train this stock price prediction model which forecast the closing price of stocks for next 500 days along with buy-sell signal indicator.')
+        st.markdown( """ News-Events plays important role in Stock Price movement. Hence the effect of a particular news on stock market was calculated and used to train this stock price prediction model which forecast the closing price of stocks for next 500 days along with buy-sell signal indicator.""")
         
-        #st.write(' Visual presentation of (selected stocks) can be found through the below charts: ')
+        st.write(" Visual presentation of "+ str(selected_stocks)+" can be found through the below charts: ")
         
-        st.header('Stock Closing Price Prediction')
+        st.write(" ##### Stock Closing Price Prediction ")
         
         for i in list(figs)[:num_company]:
             st.plotly_chart(i,use_container_width=True)
             
-        st.write(' To get the predicted price for (selected stocks) in table format. Click here.')
+        st.markdown(""" To get the predicted price for (selected stocks) in table format. Click below.""")
  
-        if st.button('Show Model Prediction'):
+        if st.button('Predicted Close Price'):
             st.dataframe(df_merged)
            
         
