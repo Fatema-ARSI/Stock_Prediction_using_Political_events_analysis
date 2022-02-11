@@ -7,7 +7,7 @@ EndDate=datetime.datetime.today().strftime('%Y-%m-%d')
 StartDate_raw=datetime.datetime.today() - datetime.timedelta(days=50)
 StartDate=StartDate_raw.strftime('%Y-%m-%d')
 
-@st.experimental_singleton
+
 def today_signal(tickers):
     data1=yf.download(tickers[0],StartDate,EndDate)
     data2=yf.download(tickers[1],StartDate,EndDate)
