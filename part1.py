@@ -69,4 +69,9 @@ class regression_analysis(HydraHeadApp):
         else:
             beta_result='not correlated with'
             
+        col1, col2 = st.columns(2)
+        col1.metric("Alpha", np.around(alpha,decimals=3), "")
+        col2.metric("Beta", np.around(beta,decimals=3), "")
+        
+        
         
