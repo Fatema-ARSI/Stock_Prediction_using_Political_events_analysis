@@ -108,7 +108,7 @@ class portfolio_optimization(HydraHeadApp):
         fig = go.Figure(data=[go.Pie(labels=labels,values=values)])
         fig.update_traces(hoverinfo='label+value+percent', textinfo='value', textfont_size=20,
                           marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-        st.plotlychart(fig)
+        st.plotly_chart(fig)
         
         if st.button('Show Portfolio Allocation'):
             st.dataframe(shares_allocations)
