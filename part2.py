@@ -39,7 +39,7 @@ class stock_prediction(HydraHeadApp):
                 tickers.append('HOLD')
             else :
                 tickers.append('SELL')
-                
+        st.write('Signal Indicator as of (today) for (selected stocks)')
         col1,col2,col3=st.columns(3)
         col1.metric(selected_stock[0],tickers[0],"")
         col2.metric(selected_stock[1],tickers[1],"")
@@ -135,10 +135,14 @@ class stock_prediction(HydraHeadApp):
         figs.append(plot_data(main_line4,signals4))
         figs.append(plot_data(main_line5,signals5))
         
+        st.write("News-Events plays important role in Stock Price movement. Hence the effect of a particular news on stock market was calculated and used to train this stock price prediction model which forecast the closing price of stocks for next 500 days along with buy-sell signal indicator.")
+        st.write("Visual presentation of (selected stocks) can be found through the below charts: ")
+        
         st.header('Stock Closing Price Prediction')
         for i in list(figs)[:num_company]:
             st.plotly_chart(i,use_container_width=True)
-            
+        st.write("To get the predicted price for (selected stocks) in table format. Click here.")
+ 
         if st.button('Show Model Prediction'):
             st.dataframe(df_merged)
            
