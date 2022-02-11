@@ -134,8 +134,7 @@ class stock_prediction(HydraHeadApp):
                                         marker_color="red",
                                        marker_line_width=1, marker_size=10,
                                        hovertemplate="Date: %{x}<br>Close Price: %{y}<br>SELL<extra></extra>",showlegend=False)
-            fig.update_layout(title=dict('text': stock,'y':0.9,'x':0.5,'xanchor': 'center','yanchor': 'top'),
-                              legend=dict(orientation="h",yanchor="bottom",y=1.02,xanchor="right",x=1))
+            fig.update_layout(title=stock,legend=dict(orientation="h",yanchor="bottom",y=1.02,xanchor="right",x=1))
             return (fig)
 
         figs=[]
