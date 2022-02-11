@@ -19,8 +19,9 @@ from hydralit import HydraHeadApp
 
 #create a wrapper class
 class regression_analysis(HydraHeadApp):
-
-#wrap all your code in this method and you should be done
+    
+    #wrap all your code in this method and you should be done
+    @st.experimental_singleton
     def run(self):
 
         ############################################ main code ###############################################
