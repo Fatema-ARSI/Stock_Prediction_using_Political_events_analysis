@@ -31,4 +31,4 @@ class home_page(HydraHeadApp):
         from the navigation bar. """
 
         """ --- Note: This is app can be used for information purpose only. """
-        """ * Python libraries: `Yahoo Finance`, `Pandas`, `Streamlit`, `Plotly`,`Hydralit`,`Tensorflow`, `Linear Regression`, `Pyportfolioopt`,`VaderSentiment` * """
+        """ * Python libraries: `Yahoo Finance`, `Pandas`, `Streamlit`, `Plotly`,`Hydralit`,`Tensorflow`, `Linear Regression`, `Pyportfolioopt`,`VaderSentiment`  """
