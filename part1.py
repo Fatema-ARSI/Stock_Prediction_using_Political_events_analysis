@@ -58,7 +58,7 @@ class regression_analysis(HydraHeadApp):
             alpha_result='well'
         else:
             alpha_result='same as'
-        
+            
         beta_result=[]
         if beta==1:
             beta_result='positively correlated with'
