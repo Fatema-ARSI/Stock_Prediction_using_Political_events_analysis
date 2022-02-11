@@ -77,7 +77,7 @@ class regression_analysis(HydraHeadApp):
         col1.metric("Alpha", np.around(alpha,decimals=3), "")
         col2.metric("Beta", np.around(beta,decimals=3), "")
         
-        #st.write(' - In the above metrics, the shown alpha and beta calculated using CAPM model, represents how stock well performed and its volatility compare to the market index.')
+        st.write(' - In the above metrics, the shown alpha and beta calculated using CAPM model, represents how stock well performed and its volatility compare to the market index.')
         
         #st.write(' ###### How to interpret the numbers?')
         
