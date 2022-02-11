@@ -8,13 +8,13 @@ import re
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 
-@st.experimental_singleton
+
 def event_to_path(event):
     return '{}.xls'.format(event)
 
 
 # data frame with manual indicators
-@st.experimental_singleton
+
 def get_self_made_data_frame(ticker,start_date,end_date):
 
 
