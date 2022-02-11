@@ -70,15 +70,11 @@ class regression_analysis(HydraHeadApp):
             beta_result='not correlated with'
             
         st.write(" - This page showcase the Regression analysis performed for " + str(selected_stock) + "and stock market index S&P 500 returns to determine the relationship between " + str(selected_stock) + " ’s daily returns and market index.")
-       
-
-        
-        
         with open('style.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
             col1, col2, col3 = st.columns(3)
             col1.metric("Alpha", np.around(alpha,decimals=3), "")
             col2.metric("Beta", np.around(beta,decimals=3), "")
             col3.metric("std_err", np.around(std_err,decimals=3), "")
-        
+        st.write(" - In the above metrics, the shown alpha and beta calculated using CAPM model, represents how stock well performed and its volatility compare to the market index.")
         
