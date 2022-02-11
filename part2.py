@@ -137,7 +137,7 @@ class stock_prediction(HydraHeadApp):
         figs.append(plot_data(main_line4,signals4))
         figs.append(plot_data(main_line5,signals5))
         
-        st.header('Stock Closing Price')
+        st.header('Stock Closing Price Prediction')
         for i in list(figs)[:num_company]:
             st.plotly_chart(i,use_container_width=True)
             
