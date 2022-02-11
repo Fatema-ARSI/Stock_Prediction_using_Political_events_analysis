@@ -51,3 +51,24 @@ class regression_analysis(HydraHeadApp):
         LR = stats.linregress(ticker_df['daily_ret'].iloc[1:],index_df['daily_ret'].iloc[1:])
         beta,alpha,r_val,p_val,std_err = LR
         
+        alpha_result=[]
+        if alpha<0:
+            alpha_result='badly'
+        elif alpha>0:
+            alpha_result='well'
+        else:
+            alpha_result='same as'
+            
+        beta_result=[]
+        if beta==1:
+            beta_result='positively correlated with'
+        elif beta<0:
+            beta_result='negatively correlated with'
+        elif beta>1
+            beta_result='more volatile than'
+        else:
+            beta_result='no correlation'
+            
+        st.write(" ## This page showcase the Regression analysis performed for " + str(selected_stock) + "and stock market index S&P 500 returns to determine the relationship between " + str(selected_stock) + "’s daily returns and market index.')
+
+        
