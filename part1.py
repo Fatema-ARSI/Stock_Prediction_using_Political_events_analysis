@@ -69,6 +69,8 @@ class regression_analysis(HydraHeadApp):
         else:
             beta_result='no correlation'
             
-        st.write(" ## This page showcase the Regression analysis performed for " + str(selected_stock) + "and stock market index S&P 500 returns to determine the relationship between " + str(selected_stock) + "’s daily returns and market index.')
+        st.write(" ## This page showcase the Regression analysis performed for " + str(selected_stock) + "and stock market index S&P 500 returns to determine the relationship between " + str(selected_stock) + "’s daily returns and market index.")
+        
+         
 
         
