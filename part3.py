@@ -99,6 +99,6 @@ class portfolio_optimization(HydraHeadApp):
         allocation, leftover = da.lp_portfolio()
         
         for i in allocation:
-            st.text(i,allocation[i])
+            st.write(i,allocation[i])
                                  
         
