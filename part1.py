@@ -60,16 +60,16 @@ class regression_analysis(HydraHeadApp):
             alpha_result='same as'
             
         beta_result=[]
-        if beta==1:
+        if beta>0.5:
             beta_result='positively correlated with'
         elif beta<0:
             beta_result='negatively correlated with'
         elif beta>1:
             beta_result='more volatile than'
         else:
-            beta_result='no correlation'
+            beta_result='not correlated with'
             
-        st.write(" - This page showcase the Regression analysis performed for " + str(selected_stock) + "and stock market index S&P 500 returns to determine the relationship between " + str(selected_stock) + "’s daily returns and market index.")
+        st.write(" - This page showcase the Regression analysis performed for " + str(selected_stock) + "and stock market index S&P 500 returns to determine the relationship between " + str(selected_stock) + " ’s daily returns and market index.")
        
 
         col1, col2, col3 = st.columns(3)
@@ -131,7 +131,7 @@ class regression_analysis(HydraHeadApp):
         st.pyplot(plt)
         ### Summarize the model
         
-        st.write("To get the detailed summary click below")
+        st.write(##### "To get the detailed summary click below")
 
         if st.button('Linear Regression Summary'):
             st.text(slr_sm_model_ko.summary())
