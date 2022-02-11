@@ -77,8 +77,8 @@ class stock_prediction(HydraHeadApp):
         
         
         
-        df_merged=pd.DataFrame(df_forecast1)
-        df_merged[selected_stock[0]]=df_merged['Prediction']
+        df_merged=pd.DataFrame(df_forecast1['Date'])
+        df_merged[selected_stock[0]]=df_forecast1['Prediction']
         df_merged[selected_stock[1]]=df_forecast2['Prediction']
         df_merged[selected_stock[2]]=df_forecast3['Prediction']
         df_merged[selected_stock[3]]=df_forecast4['Prediction']
