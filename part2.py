@@ -19,6 +19,7 @@ from hydralit import HydraHeadApp
 class stock_prediction(HydraHeadApp):
 
 #wrap all your code in this method and you should be done
+@st.experimental_memo
     def run(self):
         
         ##############################################################
@@ -54,30 +55,30 @@ class stock_prediction(HydraHeadApp):
         ########data download#################################################
 
         #get stock value
-        @st.experimental_memo
+       
         df1 = get_self_made_data_frame(selected_stock[0],selected_start_date,selected_end_date)
         df1.reset_index(inplace=True)
         
-        @st.experimental_memo
+   
         df2 = get_self_made_data_frame(selected_stock[1],selected_start_date,selected_end_date)
         df2.reset_index(inplace=True)
         
-        @st.experimental_memo
+        
         df3 = get_self_made_data_frame(selected_stock[2],selected_start_date,selected_end_date)
         df3.reset_index(inplace=True)
         
-        @st.experimental_memo
+      
         df4 = get_self_made_data_frame(selected_stock[3],selected_start_date,selected_end_date)
         df4.reset_index(inplace=True)
         
-        @st.experimental_memo
+      
         df5 = get_self_made_data_frame(selected_stock[4],selected_start_date,selected_end_date)
         df5.reset_index(inplace=True)
 
         #################################################################
         
          #predicted results
-        @st.experimental_memo
+       
         df_forecast1=get_predictions(df1)
         df_forecast2=get_predictions(df2)
         df_forecast3=get_predictions(df3)
@@ -97,7 +98,7 @@ class stock_prediction(HydraHeadApp):
         
         ########@#####################################################################@
         #get the plot data
-        @st.experimental_memo
+       
 
         main_line1=get_plot_data1(df1,df_forecast1)
         main_line2=get_plot_data1(df2,df_forecast2)
@@ -111,7 +112,7 @@ class stock_prediction(HydraHeadApp):
         signals4=get_plot_data2(main_line4,df4,df_forecast4)
         signals5=get_plot_data2(main_line5,df5,df_forecast5)
         
-        @st.experimental_memo
+     
         
         def plot_data(data1,data2):
             
