@@ -39,7 +39,13 @@ class stock_prediction(HydraHeadApp):
                 tickers.append('HOLD')
             else :
                 tickers.append('SELL')
+                
+                
+                
         st.write('Signal Indicator as of (today) for (selected stocks)')
+        
+        
+        
         col1,col2,col3=st.columns(3)
         col1.metric(selected_stock[0],tickers[0],"")
         col2.metric(selected_stock[1],tickers[1],"")
