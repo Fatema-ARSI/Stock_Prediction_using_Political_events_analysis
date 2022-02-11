@@ -12,7 +12,7 @@ from pandas.core.reshape.merge import merge
 
 
 
-
+@st.experimental_singleton
 def get_predictions(data):
   #variables for training
   cols=list(data)[1:11]
