@@ -112,7 +112,7 @@ class stock_prediction(HydraHeadApp):
         
      
         
-        def plot_data(data1,data2):
+        def plot_data(data1,data2,stock):
             
             fig=go.Figure()
             fig.add_scatter(x=data1['Date'],y=data1['Prediction'],line={'color':'blue'},name='Predicted Data',
@@ -134,15 +134,16 @@ class stock_prediction(HydraHeadApp):
                                         marker_color="red",
                                        marker_line_width=1, marker_size=10,
                                        hovertemplate="Date: %{x}<br>Close Price: %{y}<br>SELL<extra></extra>",showlegend=False)
-            fig.update_layout(legend=dict(orientation="h",yanchor="bottom",y=1.02,xanchor="right",x=1))
+            fig.update_layout(title=dict('text': stock,'y':0.9,'x':0.5,'xanchor': 'center','yanchor': 'top'),
+                              legend=dict(orientation="h",yanchor="bottom",y=1.02,xanchor="right",x=1))
             return (fig)
 
         figs=[]
-        figs.append(plot_data(main_line1,signals1))
-        figs.append(plot_data(main_line2,signals2))
-        figs.append(plot_data(main_line3,signals3))
-        figs.append(plot_data(main_line4,signals4))
-        figs.append(plot_data(main_line5,signals5))
+        figs.append(plot_data(main_line1,signals1,selected_stock[0]))
+        figs.append(plot_data(main_line2,signals2,selected_stock[1]))
+        figs.append(plot_data(main_line3,signals3,selected_stock[2]))
+        figs.append(plot_data(main_line4,signals4,selected_stock[3]))
+        figs.append(plot_data(main_line5,signals5,selected_stock[4]))
         
         st.write("")
         st.write("")
