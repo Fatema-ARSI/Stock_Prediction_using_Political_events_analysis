@@ -50,7 +50,7 @@ def get_predictions(data):
   for time_i in forecast_period_dates:
     forecast_dates.append(time_i.date())
 
-  df_forecast=pd.DataFrame({'Date':forecast_dates,'Prediction':y_pred_future})
+  df_forecast=pd.DataFrame({'Date':forecast_dates,'':y_pred_future})
 
   return(df_forecast)
   
