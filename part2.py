@@ -21,7 +21,6 @@ class stock_prediction(HydraHeadApp):
 #wrap all your code in this method and you should be done
 @st.experimental_memo
     def run(self):
-        
         ##############################################################
         ###SIDEBAR section
         st.sidebar.header('User Input Features')
@@ -56,24 +55,24 @@ class stock_prediction(HydraHeadApp):
 
         #get stock value
        
-        df1 = get_self_made_data_frame(selected_stock[0],selected_start_date,selected_end_date)
-        df1.reset_index(inplace=True)
+         df1 = get_self_made_data_frame(selected_stock[0],selected_start_date,selected_end_date)
+         df1.reset_index(inplace=True)
         
    
-        df2 = get_self_made_data_frame(selected_stock[1],selected_start_date,selected_end_date)
-        df2.reset_index(inplace=True)
+         df2 = get_self_made_data_frame(selected_stock[1],selected_start_date,selected_end_date)
+         df2.reset_index(inplace=True)
         
         
-        df3 = get_self_made_data_frame(selected_stock[2],selected_start_date,selected_end_date)
-        df3.reset_index(inplace=True)
-        
-      
-        df4 = get_self_made_data_frame(selected_stock[3],selected_start_date,selected_end_date)
-        df4.reset_index(inplace=True)
+         df3 = get_self_made_data_frame(selected_stock[2],selected_start_date,selected_end_date)
+         df3.reset_index(inplace=True)
         
       
-        df5 = get_self_made_data_frame(selected_stock[4],selected_start_date,selected_end_date)
-        df5.reset_index(inplace=True)
+         df4 = get_self_made_data_frame(selected_stock[3],selected_start_date,selected_end_date)
+         df4.reset_index(inplace=True)
+        
+      
+         df5 = get_self_made_data_frame(selected_stock[4],selected_start_date,selected_end_date)
+         df5.reset_index(inplace=True)
 
         #################################################################
         
