@@ -51,7 +51,7 @@ class regression_analysis(HydraHeadApp):
         LR = stats.linregress(ticker_df['daily_ret'].iloc[1:],index_df['daily_ret'].iloc[1:])
         beta,alpha,r_val,p_val,std_err = LR
         
-        st.write(" ###### This page showcase the Regression analysis performed for " + str(selected_stock) + " and stock market index S&P 500 returns to determine the relationship between " + str(selected_stock) + " ’s daily returns and market index.")
+        
         
         alpha_result=[]
         if alpha<0:
