@@ -7,7 +7,7 @@ pip==21.2.2
 requests==2.27.1
 requests-html==0.10.0
 yfinance==0.1.70
-numpy==1.18.1
+numpy==1.19.5
 plotly==5.5.0
 textblob==0.15.3
 vaderSentiment==3.3.2
