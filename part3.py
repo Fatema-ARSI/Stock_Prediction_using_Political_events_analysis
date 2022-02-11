@@ -97,7 +97,10 @@ class portfolio_optimization(HydraHeadApp):
         weights = cleaned_weights
         da = DiscreteAllocation(weights, latest_prices, total_portfolio_value=Amount)
         allocation, leftover = da.lp_portfolio()
-        annotated_text(('hii','hii','#ffd127'))
+        
+        for i in allocation:
+            annotated_text(i,(allocation[i],'Shares','#ffd127'))
+        
         
         shares_allocations=pd.DataFrame(allocation.items(),columns=["Stocks","Shares"])
         st.write("Expected annual return {:.2f}".format(data[0]*100)+'%')
