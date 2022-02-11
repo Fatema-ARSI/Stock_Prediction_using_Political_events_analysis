@@ -10,7 +10,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 
 def event_to_path(event):
-    return '{}.xlsx'.format(event)
+    return '{}.xls'.format(event)
 
 
 # data frame with manual indicators
