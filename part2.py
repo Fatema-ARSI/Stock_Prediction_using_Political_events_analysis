@@ -78,11 +78,6 @@ class stock_prediction(HydraHeadApp):
         df_forecast=[df_forecast1,df_forecast2,df_forecast3,df_forecast4,df_forecast5]
         
         df_merged = reduce(lambda  left,right: pd.merge(left,right,on=['Date'],how='outer'), df_forecast)
-        df_merged.columns.values[1] = selected_stock[0]
-        df_merged.columns.values[2] = selected_stock[1]
-        df_merged.columns.values[3] =selected_stock[2]
-        df_merged.columns.values[4] = selected_stock[3]
-        df_merged.columns.values[5] =selected_stock[4]
         
 
         
