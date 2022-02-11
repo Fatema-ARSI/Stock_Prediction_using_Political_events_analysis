@@ -64,7 +64,7 @@ class regression_analysis(HydraHeadApp):
             beta_result='positively correlated with'
         elif beta<0:
             beta_result='negatively correlated with'
-        elif beta>1
+        elif beta>1:
             beta_result='more volatile than'
         else:
             beta_result='no correlation'
