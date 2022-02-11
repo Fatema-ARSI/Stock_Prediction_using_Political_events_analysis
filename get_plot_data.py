@@ -1,4 +1,4 @@
-
+import streamlit as st
 import numpy as np
 
 
@@ -20,7 +20,7 @@ def get_plot_data2(main_line,data1,data2):
     signals['Date']=main_line['Date']
     signals['Close']=data1['Close'].append(data2['Prediction'])
 
-    @st.experimental_singleton
+    
     def SMA(data,period=30,column='Close'):
         return data[column].rolling(window=period).mean()
 
