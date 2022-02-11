@@ -75,6 +75,29 @@ class regression_analysis(HydraHeadApp):
         col1.metric("Alpha", np.around(alpha,decimals=3), "")
         col2.metric("Beta", np.around(beta,decimals=3), "")
         
+        ticker_df[selected_stock] = np.log(ticker_df['Adj Close'] / ticker_df['Adj Close'].shift(1))
+        index_df['spy'] = np.log(index_df['Adj Close'] / index_df['Adj Close'].shift(1))
+        
+        df = pd.concat([index_df['spy'], ticker_df[selected_stock]], axis = 1)
+        
+        slr_sm_model = smf.ols(selected_stock+'~ spy', data=df)
+        slr_sm_model_ko = slr_sm_model.fit()
+        param_slr = slr_sm_model_ko.params
+        
+        plt.figure(figsize = (10, 6))
+        plt.rcParams.update({'font.size': 14})
+        plt.xlabel("SPY returns")
+        plt.ylabel(selected_stock+" returns")
+        plt.title("Simple linear regression model")
+        plt.scatter(df['spy'],df[selected_stock])
+        plt.plot(df['spy'], param_slr.Intercept+param_slr.spy * df['spy'],label='Y={:.4f}+{:.4f}X'.format(param_slr.Intercept, param_slr.spy),color='red')
+        plt.legend()
+        st.pyplot(plt)
+        
+        if st.button('Linear Regression Summary'):
+            st.text(slr_sm_model_ko.summary())
+
+        
         
 
         
