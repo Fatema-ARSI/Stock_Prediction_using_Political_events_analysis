@@ -13,7 +13,7 @@ import yahoo_fin.stock_info as si
 import yfinance as yf
 from get_data import get_self_made_data_frame
 from get_predictions import get_predictions
-from functools import reduce
+
 
 
 #add an import to Hydralit
