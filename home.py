@@ -24,11 +24,9 @@ class home_page(HydraHeadApp):
         )
         st.markdown(""" ###### Can we predict the Stock Price and its movement in the future? """)
         
-        st.markdown(""" ###### Machine learning model helps to understand the affect of given news on the market stocks using sentiment analysis.
-        This app showcase the predicted price using the news-events for the given day.
-        Please select ** Regression on Stocks ** to compare the stock with Market Index S&P 500, ** Stock Price Prediction ** 
-        to see selected stock's future price and **Portfolio Optimization** for allocating the capital to get higher return on selected portfolio
-        from the navigation bar. 
+        st.markdown(""" ###### Machine learning model helps to understand the affect of given news on the market stocks using sentiment analysis.""")
+        st.markdown(""" ###### This app showcase the predicted price using the news-events for the given day.""")
+        st.markdown(""" ###### Please select **Regression on Stocks** to compare the stock with Market Index S&P 500, **Stock Price Prediction** to see selected stock's future price and **Portfolio Optimization** for allocating the capital to get higher return on selected portfolio from the navigation bar. """) 
 
-         --- Note: This is app can be used for information purpose only.
-        * Python libraries: `Yahoo Finance`, `Pandas`, `Streamlit`, `Plotly`,`Hydralit`,`Tensorflow`, `Linear Regression`, `Pyportfolioopt`,`VaderSentiment`  """)
+        st.markdown(""" --- Note: This is app can be used for information purpose only. """)
+        st.markdown(""" ##### * Python libraries: `Yahoo Finance`, `Pandas`, `Streamlit`, `Plotly`,`Hydralit`,`Tensorflow`, `Linear Regression`, `Pyportfolioopt`,`VaderSentiment`  """)
