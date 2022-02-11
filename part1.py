@@ -69,20 +69,21 @@ class regression_analysis(HydraHeadApp):
         else:
             beta_result='no correlation'
             
-        st.write(" #### This page showcase the Regression analysis performed for " + str(selected_stock) + "and stock market index S&P 500 returns to determine the relationship between " + str(selected_stock) + "’s daily returns and market index.")
-        
-        with open('style.css') as f:
-            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+        st.write(" ##### This page showcase the Regression analysis performed for " + str(selected_stock) + "and stock market index S&P 500 returns to determine the relationship between " + str(selected_stock) + "’s daily returns and market index.")
+       
 
         col1, col2, col3 = st.columns(3)
         col1.metric("Alpha", np.around(alpha,decimals=3), "")
         col2.metric("Beta", np.around(beta,decimals=3), "")
         col3.metric("std_err", np.around(std_err,decimals=3), "")
         
-        st.write(" #### In the above metrics, the shown alpha and beta calculated using CAPM model, represents how stock well performed and its volatility compare to the market index.")
-        st.write(" ### How to interpret the numbers?")
-        st.write(" #### Alpha is represented as a number like 1 which means the stock performed better than market index by 1% and for the negative number like -4, its vice a versa. For as Beta, the base number is 1 indicating the volatility of the stock is exactly correlated with the market index and 1.5 its 50% mre volatile than the index.")
-        st.write(" #### The " + str(selected_stock) + " has performed "+ str(alpha_result)+ " compare to S&P 500. Further in terms of volatility, it is "+ str(beta_result)+ " the market which can be graphically demonstrated below: ")
+        with open('style.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+        
+        st.write(" ##### In the above metrics, the shown alpha and beta calculated using CAPM model, represents how stock well performed and its volatility compare to the market index.")
+        st.write(" ##### How to interpret the numbers?")
+        st.write(" ##### Alpha is represented as a number like 1 which means the stock performed better than market index by 1% and for the negative number like -4, its vice a versa. For as Beta, the base number is 1 indicating the volatility of the stock is exactly correlated with the market index and 1.5 its 50% mre volatile than the index.")
+        st.write(" ##### The " + str(selected_stock) + " has performed "+ str(alpha_result)+ " compare to S&P 500. Further in terms of volatility, it is "+ str(beta_result)+ " the market which can be graphically demonstrated below: ")
         ## Calculate log returns for the period based on Adj Close prices
 
         ticker_df[selected_stock] = np.log(ticker_df['Adj Close'] / ticker_df['Adj Close'].shift(1))
