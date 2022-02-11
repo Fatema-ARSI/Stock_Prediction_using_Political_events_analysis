@@ -83,6 +83,7 @@ class stock_prediction(HydraHeadApp):
         df_merged[selected_stock[2]]=df_forecast3['Prediction']
         df_merged[selected_stock[3]]=df_forecast4['Prediction']
         df_merged[selected_stock[4]]=df_forecast5['Prediction']
+        df_merged.set_index('Date',inplace=True)
         
         ########@#####################################################################@
         #get the plot data
