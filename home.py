@@ -22,7 +22,7 @@ class home_page(HydraHeadApp):
             f'<img src="data:image/gif;base64,{data_url}" alt="stock gif" width="750" height="500">',
             unsafe_allow_html=True,
         )
-        st.markdown("""##
+        st.markdown(""" ##
         Can we predict the Stock Price and its movement in the future?
         
         Machine learning model helps to understand the affect of given news on the market stocks using sentiment analysis.
