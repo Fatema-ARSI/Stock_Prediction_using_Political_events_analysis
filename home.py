@@ -23,9 +23,11 @@ class home_page(HydraHeadApp):
             unsafe_allow_html=True,
         )
         st.markdown("""##
-        This app showcase the Stock Valuation and Sector analysis.
-        Please select **Company analysis** for comparable companies analysis, **Sector Analysis** for sector analysis and **Sector Opportunity and Challenges** for sector trends and threats for industries in 2022 from the navigation bar.
+        Can we predict the Stock Price and its movement in the future?
+        Machine learning model helps to understand the affect of given news on the market stocks using sentiment analysis.
+        This app showcase the predicted price using the news-events for the given day.
+        Please select **Regression on Stocks** to compare the stock with Market Index S&P 500, **Stock Price Prediction** to see selected stock's future price and **Portfolio Optimization** for allocating the capital to get higher return on selected portfolio from the navigation bar.
 
         --- Note: This is app can be used for information purpose only.
-        * Python libraries: `Yahoo Finance`, `Pandas`, `Streamlit`, `Plotly`,`Hydralit`,`Long Short-Term Memory(LSTM) Model`, `Linear Regression
+        * Python libraries: `Yahoo Finance`, `Pandas`, `Streamlit`, `Plotly`,`Hydralit`,`Tensorflow`, `Linear Regression`, `Pyportfolioopt`,`VaderSentiment`
         """)
