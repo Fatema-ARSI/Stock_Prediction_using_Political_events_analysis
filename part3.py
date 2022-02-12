@@ -106,7 +106,7 @@ class portfolio_optimization(HydraHeadApp):
         allocation, leftover = da.lp_portfolio()
         
         for i in allocation:
-            st.markdown(i,allocation[i])
+            st.write(i,allocation[i])
             
         st.markdown(""" **Funds remaining:** EURO {:.2f}""".format(leftover))
         
