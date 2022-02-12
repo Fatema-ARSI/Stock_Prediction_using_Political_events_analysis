@@ -71,7 +71,9 @@ class portfolio_optimization(HydraHeadApp):
         
         
         st.write('Frontier Efficient theory by Professor Henry for portfolio optimization justifies that from the given set of portfolios with same rate of risk, investor will choose one with higher return.')
+        
         st.write('This model creates the best fitted portfolio set for the given risk rate to increase the return by allocating the number of shares of non-correlated shares (for diversification of portfolio) for given capital amount. Allocation for given stocks and amount are as follows:')
+        
         df.set_index('Date',inplace=True)
         #assign equivalent weights to each stock within the portfolio
         length=len(df)
@@ -101,7 +103,7 @@ class portfolio_optimization(HydraHeadApp):
         for i in allocation:
             st.write(i,allocation[i])
             
-        st.write("Funds remaining: EURO {:.2f}".format(leftover))
+        annotated_text("Funds remaining: EURO {:.2f}"(.format(leftover),"","")
         
         
         shares_allocations=pd.DataFrame(allocation.items(),columns=["Stocks","Shares"])
