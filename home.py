@@ -12,7 +12,7 @@ class home_page(HydraHeadApp):
     def run(self):
         #sidebar section
         # Main panel
-        st.markdown("""# Stock Price Prediction using Poitical Events Analysis""")
+        st.markdown("""# Stock Price Prediction using News - Events Analysis""")
         file_ = open("logo.gif", "rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
