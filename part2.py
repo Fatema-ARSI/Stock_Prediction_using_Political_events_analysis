@@ -20,6 +20,11 @@ class stock_prediction(HydraHeadApp):
     #wrap all your code in this method and you should be done
     def run(self):
         ##############################################################
+        
+        
+        
+        st.write(' ## Stock Price Prediction Model ')
+        
         ###SIDEBAR section
         st.sidebar.header('User Input Features')
         tickers=si.tickers_sp500()
