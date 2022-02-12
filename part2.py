@@ -151,7 +151,7 @@ class stock_prediction(HydraHeadApp):
         
         st.markdown( """ News-Events plays important role in Stock Price movement. Hence the effect of a particular news on stock market was calculated and used to train this stock price prediction model which forecast the closing price of stocks for next 500 days along with buy-sell signal indicator.""")
         
-        st.write(" Visual presentation of "+ str(num_company)+" from the selected stocks can be seen in the below charts: ")
+        st.write(" Visual presentation of "+ str(num_company)+" of the stocks from the selected list can be seen in the below charts: ")
         
         st.write(" ##### Stock Closing Price Prediction ")
         st.write("")
