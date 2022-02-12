@@ -27,6 +27,11 @@ class portfolio_optimization(HydraHeadApp):
 
 
         ######################################################
+        
+        
+        st.write(' ## Portfolio Optimization ')
+        
+        
         ## SIDEBAR SECTION
 
         #sidebar section
