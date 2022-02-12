@@ -25,6 +25,8 @@ class regression_analysis(HydraHeadApp):
     def run(self):
 
         ############################################ main code ###############################################
+        
+        st.write(' ## Regression Analysis ')
 
 
 
