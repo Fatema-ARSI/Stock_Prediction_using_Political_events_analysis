@@ -158,7 +158,7 @@ class stock_prediction(HydraHeadApp):
         
         st.write(" Visual presentation of "+ str(num_company)+" of the stocks from the selected list can be seen in the below charts: ")
         
-        st.write(" ##### Stock Closing Price Prediction ")
+        st.write(" ##### Stock Price Prediction ")
         st.write("")
         st.write("")
         st.write("")
