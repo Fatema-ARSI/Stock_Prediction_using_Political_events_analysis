@@ -2,7 +2,7 @@ streamlit
 hydralit==1.0.14
 hydralit-components==1.0.10
 bs4==0.0.2
-pandas==2.2.3
+pandas
 pip==24.2
 requests==2.32.3
 requests-html==0.10.0
