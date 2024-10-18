@@ -13,7 +13,7 @@ textblob==0.18.0
 vaderSentiment==3.3.2
 pyportfolioopt==1.5.1 
 matplotlib==3.3.4
-statsmodels==0.12.2
+statsmodels==0.13.1
 scipy==1.5.4
 yahoo-fin==0.8.9.1
 datetime==4.3  
