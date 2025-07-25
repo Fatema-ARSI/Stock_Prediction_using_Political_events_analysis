@@ -1,19 +1,24 @@
-import yfinance as yf
+#import yfinance as yf
 import datetime
 import pandas as pd
 import numpy as np
 
-EndDate=datetime.datetime.today().strftime('%Y-%m-%d')
+EndDate=datetime.datetime.strptime('2021-12-31', '%Y-%m-%d')
 StartDate_raw=datetime.datetime.today() - datetime.timedelta(days=50)
+EndDate = EndDate_today.strftime('%Y-%m-%d')
 StartDate=StartDate_raw.strftime('%Y-%m-%d')
 
 
 def today_signal(tickers):
-    data1=yf.download(tickers[0],StartDate,EndDate)
-    data2=yf.download(tickers[1],StartDate,EndDate)
-    data3=yf.download(tickers[2],StartDate,EndDate)
-    data4=yf.download(tickers[3],StartDate,EndDate)
-    data5=yf.download(tickers[4],StartDate,EndDate)
+    data=pd.read_excel("shrtdata_current.xlsx")
+    data=data[(data["Date"]>str(StartDate))&(data["Date"]<str(EndDate))]
+    
+    data1 = data[data["tickers"]==tickers[0]]
+    data2 = data[data["tickers"]==tickers[1]]
+    data3 = data[data["tickers"]==tickers[2]]
+    data4 = data[data["tickers"]==tickers[3]]
+    data5 = data[data["tickers"]==tickers[4]]
+
 
     def SMA(data,period=30,column='Close'):
         return data[column].rolling(window=period).mean()
