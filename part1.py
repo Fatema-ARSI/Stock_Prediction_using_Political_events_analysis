@@ -34,7 +34,7 @@ class regression_analysis(HydraHeadApp):
         #sidebar section
         st.sidebar.header('User Input Features')
         #tickers=si.tickers_sp500()
-        tickers=ticker_df["Longname"].unique().tolist()
+        tickers=ticker_df["tickers"].unique().tolist()
         selected_stock=st.sidebar.selectbox('Select Stock',tickers)
         selected_start_date=st.sidebar.date_input('Select Start Date',datetime.date(2019,7,6),min_value=datetime.date(2014,1,1),max_value=datetime.date(2021,12,31))
         selected_end_date=st.sidebar.date_input('Select Start Date',datetime.date(2020,7,6),min_value=datetime.date(2014,1,1),max_value=datetime.date(2021,12,31))
@@ -42,7 +42,7 @@ class regression_analysis(HydraHeadApp):
         ####################################################
         ## Fetched data from yfinance
 
-        ticker_df = ticker_df[ticker_df["Longname"]==selected_stock]
+        ticker_df = ticker_df[ticker_df["tickers"]==selected_stock]
         ticker_df=ticker_df[(ticker_df["Date"]>str(selected_start_date))&(ticker_df["Date"]<str(selected_end_date))]
         index_df = pd.read_excel("spy_current.xlsx")
         index_df=index_df[(index_df["Date"]>str(selected_start_date))&(index_df["Date"]<str(selected_end_date))]
