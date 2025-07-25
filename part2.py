@@ -107,10 +107,13 @@ class stock_prediction(HydraHeadApp):
         for i in range(n_past,len(df_for_training_scaled)-n_future+1):
             train_x.append(df_for_training_scaled[i-n_past:i,0:df_for_training.shape[1]])
             train_y.append(df_for_training_scaled[i+n_future-1:i+n_future,1])
+            
+        train_x,train_y=np.array(train_x),np.array(train_y)
+
+        model=tf.keras.models.load_model('stock_prediction.h5')
 
         
-        st.write(train_x)
-        st.write(train_y)
+      
 
         #################################################################
 
