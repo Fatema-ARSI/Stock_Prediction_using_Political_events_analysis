@@ -4,7 +4,7 @@ import datetime
 import tensorflow as tf
 from sklearn.preprocessing import StandardScaler
 
-def get_predictions(data, forecast_horizon=252):
+def get_predictions(data, forecast_horizon=500):
     # --- Prepare data ---
     cols = list(data)[1:11]  # Feature columns, excluding 'Date'
     df_features = data[cols].astype(float)
