@@ -93,7 +93,7 @@ class stock_prediction(HydraHeadApp):
         df5.reset_index(inplace=True)
         
         # --- Prepare data ---
-        cols = list(data)[1:11]  # Feature columns, excluding 'Date'
+        cols = list(df1)[1:11]  # Feature columns, excluding 'Date'
         df_features = df1[cols].astype(float)
         train_dates = pd.to_datetime(df1['Date'])
 
