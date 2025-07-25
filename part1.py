@@ -31,7 +31,7 @@ class regression_analysis(HydraHeadApp):
         #sidebar section
         st.sidebar.header('User Input Features')
         #tickers=si.tickers_sp500()
-        tickers=["INTC","AAPL","NVDA","MSFT","TSLA"]
+        tickers=["AAPL","ABNB","AMZN","GOOG","INTC","MSFT","NVDA","SBUX","TSLA"]
         selected_stock=st.sidebar.selectbox('Select Stock',tickers)
         selected_start_date=st.sidebar.date_input('Select Start Date',datetime.date(2019,7,6),min_value=datetime.date(2014,1,1),max_value=datetime.date(2021,12,31))
         selected_end_date=st.sidebar.date_input('Select Start Date',datetime.date(2020,7,6),min_value=datetime.date(2014,1,1),max_value=datetime.date(2021,12,31))
