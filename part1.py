@@ -49,9 +49,9 @@ class regression_analysis(HydraHeadApp):
 
         ####################################################
 
-        st.write(" This page presents a regression analysis between + str(selected_stock) + and the S&P 500 market index to assess the relationship between +  str(selected_stock) +’s daily returns and overall market performance.")
+        st.write(" This page presents a regression analysis between" + str(selected_stock) + "and the S&P 500 market index to assess the relationship between" +  str(selected_stock) +"’s daily returns and overall market performance.")
         st.write()
-        st.write("**Regression Metrics (Based on CAPM Model):**")
+        st.write(""" **Regression Metrics (Based on CAPM Model):** """)
         ##Metrics Alpha Beta
 
         ticker_df['daily_ret'] = ticker_df['Close'].pct_change(1)
@@ -94,7 +94,18 @@ class regression_analysis(HydraHeadApp):
 
         st.markdown(""" ###### How to interpret the numbers? """)
 
-        st.markdown(""" - Alpha is represented as a number like 1 which means the stock performed better than market index by 1% and for the negative number like -4, its vice a versa. For as Beta, the base number is 1 indicating the volatility of the stock is exactly correlated with the market index and 1.5 its 50% mre volatile than the index.""")
+        st.markdown(""" **Alpha** indicates the stock’s excess return relative to the market.""")
+        st.markdown(""" - A positive alpha (e.g., 1) means the stock outperformed the market by 1%.""")
+        st.markdown(""" - A negative alpha (e.g., -4) means the stock underperformed the market by 4%.""")
+
+        st.markdown(""" **Beta** imeasures the stock’s volatility compared to the market:""")
+        st.markdown(""" - A beta of 1 implies the stock moves in line with the market.""")
+        st.markdown(""" - A beta of 1.5 suggests the stock is 50% more volatile than the market.""")
+        st.markdown(""" - A beta below 1 (like 0.723) indicates less volatility than the market, but still a positive correlation.""")
+
+
+        st.markdown(""" ###### Summary: """)
+        st.write(" Based on this analysis,"+ str(selected_stock) +" has derperformed "+ str(alpha_result) +" compared to the S&P 500. However, its beta of "+ str(beta_result) +" shows it moves in the same direction as the market, but with lower volatility. This relationship is further illustrated in the graph below.
 
         st.write(" ###### The " + str(selected_stock)+" has performed " + str(alpha_result) + " compare to S&P 500. Further in terms of volatility, it is " + str(beta_result) + " the market which can be graphically demonstrated below:")
 
