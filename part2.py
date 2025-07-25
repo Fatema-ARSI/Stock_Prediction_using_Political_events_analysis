@@ -82,7 +82,8 @@ class stock_prediction(HydraHeadApp):
         df5.reset_index(inplace=True)
         cols=list(df1)[1:11]
         df_for_training=df1[cols].astype(float)
-        st.write(df_for_training)
+        train_dates=pd.to_datetime(df1['Date'])
+        st.write(train_dates)
 
         #################################################################
 
