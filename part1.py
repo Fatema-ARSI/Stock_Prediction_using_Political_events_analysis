@@ -49,8 +49,9 @@ class regression_analysis(HydraHeadApp):
 
         ####################################################
 
-        st.write(" - This page showcase the Regression analysis performed for " + str(selected_stock) + " and stock market index S&P 500 returns to determine the relationship between " +  str(selected_stock) + "’s daily returns and market index.")
-        st.write("")
+        st.write(" This page presents a regression analysis between + str(selected_stock) + and the S&P 500 market index to assess the relationship between +  str(selected_stock) +’s daily returns and overall market performance.")
+        st.write()
+        st.write("**Regression Metrics (Based on CAPM Model):**")
         ##Metrics Alpha Beta
 
         ticker_df['daily_ret'] = ticker_df['Close'].pct_change(1)
@@ -89,7 +90,7 @@ class regression_analysis(HydraHeadApp):
 
         st.write("")
 
-        st.markdown(""" - In the above metrics, the shown alpha and beta calculated using CAPM model, represents how stock well performed and its volatility compare to the market index.""")
+        st.markdown(""" These values are derived using the **Capital Asset Pricing Model (CAPM)**, which evaluates a stock's performance and volatility relative to the market.""")
 
         st.markdown(""" ###### How to interpret the numbers? """)
 
