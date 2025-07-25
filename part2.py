@@ -4,6 +4,7 @@ import numpy as np
 #import yahoo_fin.stock_info as si
 import pandas as pd
 import datetime
+import math
 
 import plotly.graph_objs as go
 import plotly.io as pio
@@ -55,18 +56,12 @@ class stock_prediction(HydraHeadApp):
         st.write("")
 
 
-        if len(selected_stock) >= 3 and len(tickers) >= 3:
-            col1, col2, col3 = st.columns(3)
-            col1.metric(selected_stock[0], tickers[0], "")
-            col2.metric(selected_stock[1], tickers[1], "")
-            col3.metric(selected_stock[2], tickers[2], "")
-        if len(selected_stock) >= 5 and len(tickers) >= 5:
-            col1, col2 = st.columns(2)
-            col1.metric(selected_stock[3], tickers[3], "")
-            col2.metric(selected_stock[4], tickers[4], "")
-        
-        
-        
-        
-
-        
+        cols_per_row = 3
+        num_rows = math.ceil(len(selected_stock) / cols_per_row)
+        for i in range(num_rows):
+            cols = st.columns(cols_per_row)
+            for j in range(cols_per_row):
+                idx = i * cols_per_row + j
+                if idx < len(selected_stock) and idx < len(tickers):
+                    cols[j].metric(selected_stock[idx], tickers[idx], "")
+           
