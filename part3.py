@@ -83,7 +83,13 @@ class portfolio_optimization(HydraHeadApp):
         df.set_index('Date',inplace=True)
         #assign equivalent weights to each stock within the portfolio
         length=len(df)
-        st.write(df)
+        weights=np.array([0.2]*length )
+        # This means if I had a total of 100 EURO in the portfolio, then I would have 20 EURO in each stock.
+        #Show the daily simple returns, NOTE: Formula = new_price/old_price - 1
+        # Calculate the expected returns and the annualised sample covariance matrix of daily asset returns.
+        mu = expected_returns.mean_historical_return(df)#returns.mean() * 252
+        S = risk_models.sample_cov(df) #Get the sample covariance matrix
+
 
                                  
         
