@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     app.add_app("Regression on Stocks", icon="", app=regression_analysis())
     app.add_app("Stock Price prediction", icon="", app=stock_prediction())
-    app.add_app("Portfolio Optimization", icon="", app=portfolio_optimization())
+    #app.add_app("Portfolio Optimization", icon="", app=portfolio_optimization())
 
 
 
