@@ -4,15 +4,15 @@ import pandas as pd
 import numpy as np
 
 EndDate=datetime.datetime.strptime('2021-12-31', '%Y-%m-%d')
-StartDate_raw=datetime.datetime.today() - datetime.timedelta(days=50)
-EndDate = EndDate_today.strftime('%Y-%m-%d')
+StartDate_raw=EndDate - datetime.timedelta(days=50)
+EndDate = EndDate.strftime('%Y-%m-%d')
 StartDate=StartDate_raw.strftime('%Y-%m-%d')
 
 
 def today_signal(tickers):
     data=pd.read_excel("shrtdata_current.xlsx")
-    data=data[(data["Date"]>str(StartDate))&(data["Date"]<str(EndDate))]
-    
+    data=data[(data["Date"]>StartDate)&(data["Date"]<EndDate)]
+
     data1 = data[data["tickers"]==tickers[0]]
     data2 = data[data["tickers"]==tickers[1]]
     data3 = data[data["tickers"]==tickers[2]]
@@ -57,10 +57,11 @@ def today_signal(tickers):
     data5['sell']=np.where(data5['position']== -1,data5['Close'],np.NAN)
 
     signal=[]
-    signal.append(data1['position'][-1])
-    signal.append(data2['position'][-1])
-    signal.append(data3['position'][-1])
-    signal.append(data4['position'][-1])
-    signal.append(data5['position'][-1])
+
+    signal.append(data1['position'].iloc[-1])
+    signal.append(data2['position'].iloc[-1])
+    signal.append(data3['position'].iloc[-1])
+    signal.append(data4['position'].iloc[-1])
+    signal.append(data5['position'].iloc[-1])
 
     return(signal)
