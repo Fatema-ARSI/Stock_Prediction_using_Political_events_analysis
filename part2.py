@@ -53,18 +53,17 @@ class stock_prediction(HydraHeadApp):
         st.write("")
         st.write("")
         st.write("")
-        
-        
-       if len(selected_stock) >= 3 and len(tickers) >= 3:
-          col1, col2, col3 = st.columns(3)
-          col1.metric(selected_stock[0], tickers[0], "")
-          col2.metric(selected_stock[1], tickers[1], "")
-          col3.metric(selected_stock[2], tickers[2], "")
 
-       if len(selected_stock) >= 5 and len(tickers) >= 5:
-          col1, col2 = st.columns(2)
-          col1.metric(selected_stock[3], tickers[3], "")
-          col2.metric(selected_stock[4], tickers[4], "")
+
+        if len(selected_stock) >= 3 and len(tickers) >= 3:
+            col1, col2, col3 = st.columns(3)
+            col1.metric(selected_stock[0], tickers[0], "")
+            col2.metric(selected_stock[1], tickers[1], "")
+            col3.metric(selected_stock[2], tickers[2], "")
+        if len(selected_stock) >= 5 and len(tickers) >= 5:
+            col1, col2 = st.columns(2)
+            col1.metric(selected_stock[3], tickers[3], "")
+            col2.metric(selected_stock[4], tickers[4], "")
         
         
         
