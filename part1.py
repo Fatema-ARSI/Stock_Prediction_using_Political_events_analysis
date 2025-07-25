@@ -17,7 +17,6 @@ from sklearn.linear_model import LinearRegression
 #add an import to Hydralit
 from hydralit import HydraHeadApp
 
-ticker_df = pd.read_excel("model_data_yfinance.xlsx")
 
 #create a wrapper class
 class regression_analysis(HydraHeadApp):
@@ -29,6 +28,8 @@ class regression_analysis(HydraHeadApp):
         ############################################ main code ###############################################
         
         st.write(' ## Regression Analysis ')
+
+        ticker_df = pd.read_excel("model_data_yfinance.xlsx")
 
         #sidebar section
         st.sidebar.header('User Input Features')
