@@ -110,9 +110,7 @@ class stock_prediction(HydraHeadApp):
             
         train_x,train_y=np.array(train_x),np.array(train_y)
 
-        model = build_model()  # Recreate your model manually
-        model.load_weights('stock_prediction.h5')
-        model = tf.keras.models.load_model('stock_prediction.h5', compile=False)
+        model=tf.keras.models.load_model('stock_prediction.h5')
 
         
       
