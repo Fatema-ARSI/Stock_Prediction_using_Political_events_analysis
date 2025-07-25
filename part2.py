@@ -98,8 +98,19 @@ class stock_prediction(HydraHeadApp):
         scaler=StandardScaler()
         scaler=scaler.fit(df_for_training)
         df_for_training_scaled=scaler.transform(df_for_training)
+
+        train_x=[]
+        train_y=[]
+        n_future=1
+        n_past=90
+
+        for i in range(n_past,len(df_for_training_scaled)-n_future+1):
+            train_x.append(df_for_training_scaled[i-n_past:i,0:df_for_training.shape[1]])
+            train_y.append(df_for_training_scaled[i+n_future-1:i+n_future,1])
+
         
-        st.write(df_for_training_scaled)
+        st.write(train_x)
+        st.write(train_y)
 
         #################################################################
 
