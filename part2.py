@@ -92,11 +92,21 @@ class stock_prediction(HydraHeadApp):
         df5 = get_self_made_data_frame(selected_stock[4],selected_start_date,selected_end_date)
         df5.reset_index(inplace=True)
         
-        # --- Prepare data ---
-        cols = list(df1)[1:11]  # Feature columns, excluding 'Date'
-        df_features = df1[cols].astype(float)
-        train_dates = pd.to_datetime(df1['Date'])
+        #predicted results
 
-        st.write(cols)
+        df_forecast1=get_predictions(df1)
+        df_forecast2=get_predictions(df2)
+        df_forecast3=get_predictions(df3)
+        df_forecast4=get_predictions(df4)
+        df_forecast5=get_predictions(df5)
+
+        df_merged=pd.DataFrame(df_forecast1['Date'])
+        df_merged[selected_stock[0]]=df_forecast1['Prediction']
+        df_merged[selected_stock[1]]=df_forecast2['Prediction']
+        df_merged[selected_stock[2]]=df_forecast3['Prediction']
+        df_merged[selected_stock[3]]=df_forecast4['Prediction']
+        df_merged[selected_stock[4]]=df_forecast5['Prediction']
+        df_merged.set_index('Date',inplace=True)
+        st.write(df_forecast1)
 
 
