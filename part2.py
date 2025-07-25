@@ -94,8 +94,8 @@ class stock_prediction(HydraHeadApp):
         
         # --- Prepare data ---
         cols = list(data)[1:11]  # Feature columns, excluding 'Date'
-        df_features = data[cols].astype(float)
-        train_dates = pd.to_datetime(data['Date'])
+        df_features = df1[cols].astype(float)
+        train_dates = pd.to_datetime(df1['Date'])
 
         st.write(cols)
 
