@@ -22,9 +22,9 @@ def get_self_made_data_frame(ticker,start_date,end_date):
 
   #download ticker data
   symbol_data_frame=pd.read_excel("shrtdata_current.xlsx")
-  symbol_data_frame=symbol_df[symbol_df["tickers"]==ticker]
-  symbol_data=symbol_data[(symbol_data["Date"]>str(start_date))&(symbol_data["Date"]<str(end_date))]
-  symbol_data.set_index('Date', inplace=True)
+  symbol_data_frame=symbol_data_frame[symbol_data_frame["tickers"]==ticker]
+  symbol_data_frame=symbol_data_frame[(symbol_data_frame["Date"]>str(start_date))&(symbol_data_frame["Date"]<str(end_date))]
+  symbol_data_frame.set_index('Date', inplace=True)
 
   #add news data
   news_data_frame = pd.read_excel(event_to_path('news'), index_col = 'Date')
