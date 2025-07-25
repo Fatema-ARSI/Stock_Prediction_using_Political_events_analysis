@@ -4,7 +4,18 @@ import numpy as np
 #import yahoo_fin.stock_info as si
 import pandas as pd
 import datetime
-import math
+
+import numpy as np
+
+import pandas as pd
+import datetime
+
+import tensorflow as tf
+
+
+from sklearn.preprocessing import StandardScaler
+from pandas.core.reshape.merge import merge
+
 
 import plotly.graph_objs as go
 import plotly.io as pio
