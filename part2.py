@@ -94,6 +94,12 @@ class stock_prediction(HydraHeadApp):
         
         #predicted results
 
+        cols = list(df1)[1:11]  # Feature columns, excluding 'Date'
+        df_features = df1[cols].astype(float)
+        train_dates = pd.to_datetime(df1['Date'])
+
+        st.write(train_dates.iloc[-1])
+
         df_forecast1=get_predictions(df1)
         df_forecast2=get_predictions(df2)
         df_forecast3=get_predictions(df3)
@@ -107,6 +113,6 @@ class stock_prediction(HydraHeadApp):
         df_merged[selected_stock[3]]=df_forecast4['Prediction']
         df_merged[selected_stock[4]]=df_forecast5['Prediction']
         df_merged.set_index('Date',inplace=True)
-        st.write(df_forecast1)
+
 
 
