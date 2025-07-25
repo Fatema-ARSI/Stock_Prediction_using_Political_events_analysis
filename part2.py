@@ -94,11 +94,11 @@ class stock_prediction(HydraHeadApp):
         
         #predicted results
 
-        cols = list(df1)[1:11]  # Feature columns, excluding 'Date'
-        df_features = df1[cols].astype(float)
-        train_dates = pd.to_datetime(df1['Date'])
-
-        st.write(train_dates.iloc[-1])
+        st.write(df1["Date"].iloc[-1]))
+        st.write(df2["Date"].iloc[-1]))
+        st.write(df3["Date"].iloc[-1]))
+        st.write(df4["Date"].iloc[-1]))
+        st.write(df5["Date"].iloc[-1]))
 
         df_forecast1=get_predictions(df1)
         df_forecast2=get_predictions(df2)
