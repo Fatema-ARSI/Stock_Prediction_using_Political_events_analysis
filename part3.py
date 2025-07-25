@@ -83,7 +83,7 @@ class portfolio_optimization(HydraHeadApp):
         df.set_index('Date',inplace=True)
         #assign equivalent weights to each stock within the portfolio
         length=len(df)
-        st.write(df
+        st.write(df)
 
                                  
         
