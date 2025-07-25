@@ -29,7 +29,7 @@ class stock_prediction(HydraHeadApp):
         ###SIDEBAR section
         st.sidebar.header('User Input Features')
         #tickers=si.tickers_sp500()
-        tickers=["INTC","AAPL","NVDA","MSFT","TSLA"]
+        tickers=["AAPL","ABNB","AMZN","GOOG","INTC","MSFT","NVDA","SBUX","TSLA"]
         selected_stock=st.sidebar.multiselect('Select Stocks (Maximum 5)',tickers,["INTC","AAPL","NVDA","MSFT","TSLA"])
         selected_start_date='2014-01-02'
         selected_end_date='2022-01-01'
