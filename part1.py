@@ -39,7 +39,7 @@ class regression_analysis(HydraHeadApp):
         ####################################################
         ## Fetched data from yfinance
 
-        ticker_df = pd.read_excel("shrtdata_current.xlsx")
+        ticker_df = pd.read_excel("model_data_yfinance.xlsx")
         ticker_df = ticker_df[ticker_df["tickers"]==selected_stock]
         ticker_df=ticker_df[(ticker_df["Date"]>str(selected_start_date))&(ticker_df["Date"]<str(selected_end_date))]
         index_df = pd.read_excel("spy_current.xlsx")
