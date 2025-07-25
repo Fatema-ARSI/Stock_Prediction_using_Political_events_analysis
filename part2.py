@@ -93,15 +93,4 @@ class stock_prediction(HydraHeadApp):
 
 
 
-        df_merged=pd.DataFrame(df_forecast1['Date'])
-        df_merged[selected_stock[0]]=df_forecast1['Prediction']
-        df_merged[selected_stock[1]]=df_forecast2['Prediction']
-        df_merged[selected_stock[2]]=df_forecast3['Prediction']
-        df_merged[selected_stock[3]]=df_forecast4['Prediction']
-        df_merged[selected_stock[4]]=df_forecast5['Prediction']
-        df_merged.set_index('Date',inplace=True)
-
-        
-
-        if st.button('Predicted Close Price'):
-            st.dataframe(df_merged)
+        st.write(df_forecast5)
