@@ -94,11 +94,6 @@ class stock_prediction(HydraHeadApp):
         
         #predicted results
 
-        st.write(df1["Date"].iloc[-1])
-        st.write(df2["Date"].iloc[-1])
-        st.write(df3["Date"].iloc[-1])
-        st.write(df4["Date"].iloc[-1])
-        st.write(df5["Date"].iloc[-1])
 
         df_forecast1=get_predictions(df1)
         df_forecast2=get_predictions(df2)
