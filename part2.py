@@ -22,7 +22,7 @@ import plotly.io as pio
 from plotly.offline import init_notebook_mode,iplot
 from today_signal import today_signal
 from get_data import get_self_made_data_frame
-#from get_predictions import get_predictions
+from get_predictions import get_predictions
 #from get_plot_data import get_plot_data1, get_plot_data2
 ###import to Hydralit
 from hydralit import HydraHeadApp
@@ -91,33 +91,23 @@ class stock_prediction(HydraHeadApp):
 
         df5 = get_self_made_data_frame(selected_stock[4],selected_start_date,selected_end_date)
         df5.reset_index(inplace=True)
-        cols=list(df1)[1:11]
-        df_for_training=df1[cols].astype(float)
-        train_dates=pd.to_datetime(df1['Date'])
-
-        scaler=StandardScaler()
-        scaler=scaler.fit(df_for_training)
-        df_for_training_scaled=scaler.transform(df_for_training)
-
-        train_x=[]
-        train_y=[]
-        n_future=1
-        n_past=90
-
-        for i in range(n_past,len(df_for_training_scaled)-n_future+1):
-            train_x.append(df_for_training_scaled[i-n_past:i,0:df_for_training.shape[1]])
-            train_y.append(df_for_training_scaled[i+n_future-1:i+n_future,1])
-            
-        train_x,train_y=np.array(train_x),np.array(train_y)
-
-        model=tf.keras.models.load_model('stock_prediction.h5')
-
         
-      
+        #predicted results
 
-        #################################################################
+        df_forecast1=get_predictions(df1)
+        df_forecast2=get_predictions(df2)
+        df_forecast3=get_predictions(df3)
+        df_forecast4=get_predictions(df4)
+        #df_forecast5=get_predictions(df5)
 
 
 
+        df_merged=pd.DataFrame(df_forecast1['Date'])
+        df_merged[selected_stock[0]]=df_forecast1['Prediction']
+        df_merged[selected_stock[1]]=df_forecast2['Prediction']
+        df_merged[selected_stock[2]]=df_forecast3['Prediction']
+        df_merged[selected_stock[3]]=df_forecast4['Prediction']
+        #df_merged[selected_stock[4]]=df_forecast5['Prediction']
+        df_merged.set_index('Date',inplace=True)
 
-        
+
