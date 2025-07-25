@@ -83,7 +83,4 @@ class stock_prediction(HydraHeadApp):
 
         #################################################################
 
-         #variables for training
-         cols=list(df1)[1:11]
-         
-         st.write(cols)
+        
