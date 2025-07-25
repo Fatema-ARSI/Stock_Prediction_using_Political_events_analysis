@@ -33,6 +33,37 @@ class stock_prediction(HydraHeadApp):
         selected_start_date='2014-01-02'
         selected_end_date='2022-01-01'
         num_company=st.sidebar.slider('Number of Stock Prediction To Show',1,5,2)
+
+####################################################
+        ##today signals
+        signal_data=today_signal(selected_stock)
+        tickers=[]
+        for i in signal_data:
+            if i==0.0:
+                tickers.append('HOLD')
+            elif i==1.0:
+                tickers.append('HOLD')
+            else :
+                tickers.append('SELL')
+                
+                
+                
+        st.write(" ##### Signal Indicator as of " + datetime.datetime.today().strftime('%Y-%m-%d') + " for selected stocks." )
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        
+        
+        col1,col2,col3=st.columns(3)
+        col1.metric(selected_stock[0],tickers[0],"")
+        col2.metric(selected_stock[1],tickers[1],"")
+        col3.metric(selected_stock[2],tickers[2],"")
+        col1,col2=st.columns(2)
+        col1.metric(selected_stock[3],tickers[3],"")
+        col2.metric(selected_stock[4],tickers[4],"")
+        
+        
         
         
 
