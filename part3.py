@@ -9,8 +9,8 @@ from pypfopt import expected_returns
 from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
 import plotly.graph_objects as go
 
-import yahoo_fin.stock_info as si
-import yfinance as yf
+#import yahoo_fin.stock_info as si
+#import yfinance as yf
 from get_data import get_self_made_data_frame
 from get_predictions import get_predictions
 
@@ -36,9 +36,10 @@ class portfolio_optimization(HydraHeadApp):
 
         #sidebar section
         st.sidebar.header('User Input Features')
-        tickers=si.tickers_sp500()
+        #tickers=si.tickers_sp500()
+        tickers=["AAPL","ABNB","AMZN","GOOG","INTC","MSFT","NVDA","SBUX","TSLA"]
         Amount=st.sidebar.number_input('Put your investment amount here',2000)
-        selected_stock=st.sidebar.multiselect('Select Stock (Maximum 5)',tickers,['AAPL','V','AZO','JNJ','FDX'])
+        selected_stock=st.sidebar.multiselect('Select Stock (Maximum 5)',tickers,["INTC","AAPL","NVDA","MSFT","TSLA"])
         selected_start_date='2014-01-02'
         selected_end_date='2022-01-01'
         
