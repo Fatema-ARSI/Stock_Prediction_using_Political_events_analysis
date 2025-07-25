@@ -81,7 +81,8 @@ class stock_prediction(HydraHeadApp):
         df5 = get_self_made_data_frame(selected_stock[4],selected_start_date,selected_end_date)
         df5.reset_index(inplace=True)
         cols=list(df1)[1:11]
-        st.write(cols)
+        df_for_training=df1[cols].astype(float)
+        st.write(df_for_training)
 
         #################################################################
 
