@@ -56,12 +56,4 @@ class stock_prediction(HydraHeadApp):
         st.write("")
 
 
-        cols_per_row = 3
-        num_rows = math.ceil(len(selected_stock) / cols_per_row)
-        for i in range(num_rows):
-            cols = st.columns(cols_per_row)
-            for j in range(cols_per_row):
-                idx = i * cols_per_row + j
-                if idx < len(selected_stock) and idx < len(tickers):
-                    cols[j].metric(selected_stock[idx], tickers[idx], "")
-           
+        st.write(signal_data)
