@@ -21,7 +21,7 @@ def get_self_made_data_frame(ticker,start_date,end_date):
 
 
   #download ticker data
-  symbol_data_frame=pd.read_excel("shrtdata_current.xlsx")
+  symbol_data_frame=pd.read_excel("model_data_yfinance.xlsx")
   symbol_data_frame=symbol_data_frame[symbol_data_frame["tickers"]==ticker]
   symbol_data_frame=symbol_data_frame[(symbol_data_frame["Date"]>str(start_date))&(symbol_data_frame["Date"]<str(end_date))]
   symbol_data_frame.set_index('Date', inplace=True)
