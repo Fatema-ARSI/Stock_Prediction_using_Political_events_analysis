@@ -10,7 +10,7 @@ StartDate=StartDate_raw.strftime('%Y-%m-%d')
 
 
 def today_signal(tickers):
-    data=pd.read_excel("shrtdata_current.xlsx")
+    data=pd.read_excel("model_data_yfinance.xlsx")
     data=data[(data["Date"]>StartDate)&(data["Date"]<EndDate)]
 
     data1 = data[data["tickers"]==tickers[0]]
