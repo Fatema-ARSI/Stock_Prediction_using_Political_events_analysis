@@ -28,8 +28,8 @@ class stock_prediction(HydraHeadApp):
         ###SIDEBAR section
         st.sidebar.header('User Input Features')
         #tickers=si.tickers_sp500()
-        tickers=["INTC","AAPL","BMNR","MSFT"]
-        selected_stock=st.sidebar.multiselect('Select Stocks (Maximum 5)',tickers,["INTC","AAPL","BMNR","MSFT"])
+        tickers=["INTC","AAPL","BMNR","MSFT","TSLA"]
+        selected_stock=st.sidebar.multiselect('Select Stocks (Maximum 5)',tickers,["INTC","AAPL","BMNR","MSFT","TSLA"])
         selected_start_date='2014-01-02'
         selected_end_date='2022-01-01'
         num_company=st.sidebar.slider('Number of Stock Prediction To Show',1,5,2)
@@ -61,7 +61,7 @@ class stock_prediction(HydraHeadApp):
         col3.metric(selected_stock[2],tickers[2],"")
         col1,col2=st.columns(2)
         col1.metric(selected_stock[3],tickers[3],"")
-        #col2.metric(selected_stock[4],tickers[4],"")
+        col2.metric(selected_stock[4],tickers[4],"")
         
         ########data download#################################################
         #get stock value
@@ -77,7 +77,7 @@ class stock_prediction(HydraHeadApp):
         df4 = get_self_made_data_frame(selected_stock[3],selected_start_date,selected_end_date)
         df4.reset_index(inplace=True)
         
-        #df5 = get_self_made_data_frame(selected_stock[4],selected_start_date,selected_end_date)
-        #df5.reset_index(inplace=True)
+        df5 = get_self_made_data_frame(selected_stock[4],selected_start_date,selected_end_date)
+        df5.reset_index(inplace=True)
 
         
