@@ -17,7 +17,7 @@ statsmodels==0.13.1
 scipy==1.5.4
 yahoo-fin==0.8.9.1
 datetime==4.3  
-tensorflow
+tensorflow==2.12.0rc0
 st-annotated-text
 sklearn==0.0 
 openpyxl==3.0.9
