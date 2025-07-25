@@ -23,10 +23,16 @@ class home_page(HydraHeadApp):
             unsafe_allow_html=True,
         )
         
-        st.markdown(""" Can we predict the Stock Price and its movement in the future? """)
-        st.markdown(""" Machine learning model helps to understand the affect of given news on the market stocks using sentiment analysis.""")
-        st.markdown(""" This app showcase the predicted price using the news-events for the given day.""")
-        st.markdown(""" Please select **Regression on Stocks** to compare the stock with Market Index S&P 500, **Stock Price Prediction** to see selected stock's future price and **Portfolio Optimization** for allocating the capital to get higher return on selected portfolio from the navigation bar. """) 
-
-        st.markdown(""" --- Note: This is app can be used for information purpose only. """)
-        st.markdown(""" * Python libraries: `Yahoo Finance`, `Pandas`, `Streamlit`, `Plotly`,`Hydralit`,`Tensorflow`, `Linear Regression`, `Pyportfolioopt`,`VaderSentiment`  """)
+        st.markdown(""" **Can we predict stock prices and their movements?** """)
+        st.markdown(""" This application leverages machine learning models to analyze how financial news impacts stock performance through sentiment analysis.""")
+        st.markdown(""" It presents predicted stock prices based on daily news and events, offering insights into potential market movements.""")
+        st.markdown(""" The model was trained using historical data from **January 1, 2014, to December 31, 2021**, for regression analysis and prediction. Data from **January 1, 2022, to May 31, 2023**, was used to evaluate the model’s accuracy and validate its predictive capability. """)
+        
+        st.markdown(""" From the navigation bar, you can explore:""")
+        st.markdown(""" * **Regression on Stocks:** Compare individual stock performance with the S&P 500 index. """)
+        st.markdown(""" * **Stock Price Prediction:** View forecasted prices of selected stocks. """)
+        st.markdown(""" * **Portfolio Optimization:** Allocate capital efficiently to maximize returns on your selected portfolio. """)
+        
+        
+        st.markdown(""" **Note:** This application is intended for informational purposes only and does not constitute financial advice. """)
+        st.markdown(""" **Powered by Python libraries:** `Yahoo Finance`, `Pandas`, `Streamlit`, `Plotly`,`Hydralit`,`Tensorflow`, `Linear Regression`, `Pyportfolioopt`,`VaderSentiment`  """)
