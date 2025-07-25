@@ -61,7 +61,7 @@ class stock_prediction(HydraHeadApp):
         col3.metric(selected_stock[2],tickers[2],"")
         col1,col2=st.columns(2)
         col1.metric(selected_stock[3],tickers[3],"")
-        col2.metric(selected_stock[4],tickers[4],"")
+        #col2.metric(selected_stock[4],tickers[4],"")
         
         ########data download#################################################
         #get stock value
@@ -77,8 +77,8 @@ class stock_prediction(HydraHeadApp):
         df4 = get_self_made_data_frame(selected_stock[3],selected_start_date,selected_end_date)
         df4.reset_index(inplace=True)
         
-        df5 = get_self_made_data_frame(selected_stock[4],selected_start_date,selected_end_date)
-        df5.reset_index(inplace=True)
+        #df5 = get_self_made_data_frame(selected_stock[4],selected_start_date,selected_end_date)
+        #df5.reset_index(inplace=True)
 
         #################################################################
         
@@ -88,7 +88,7 @@ class stock_prediction(HydraHeadApp):
         df_forecast2=get_predictions(df2)
         df_forecast3=get_predictions(df3)
         df_forecast4=get_predictions(df4)
-        df_forecast5=get_predictions(df5)
+        #df_forecast5=get_predictions(df5)
         
         
         
@@ -97,7 +97,7 @@ class stock_prediction(HydraHeadApp):
         df_merged[selected_stock[1]]=df_forecast2['Prediction']
         df_merged[selected_stock[2]]=df_forecast3['Prediction']
         df_merged[selected_stock[3]]=df_forecast4['Prediction']
-        df_merged[selected_stock[4]]=df_forecast5['Prediction']
+        #df_merged[selected_stock[4]]=df_forecast5['Prediction']
         df_merged.set_index('Date',inplace=True)
         
         ########@#####################################################################@
@@ -108,13 +108,13 @@ class stock_prediction(HydraHeadApp):
         main_line2=get_plot_data1(df2,df_forecast2)
         main_line3=get_plot_data1(df3,df_forecast3)
         main_line4=get_plot_data1(df4,df_forecast4)
-        main_line5=get_plot_data1(df5,df_forecast5)
+        #main_line5=get_plot_data1(df5,df_forecast5)
 
         signals1=get_plot_data2(main_line1,df1,df_forecast1)
         signals2=get_plot_data2(main_line2,df2,df_forecast2)
         signals3=get_plot_data2(main_line3,df3,df_forecast3)
         signals4=get_plot_data2(main_line4,df4,df_forecast4)
-        signals5=get_plot_data2(main_line5,df5,df_forecast5)
+        #signals5=get_plot_data2(main_line5,df5,df_forecast5)
         
      
         
@@ -148,7 +148,7 @@ class stock_prediction(HydraHeadApp):
         figs.append(plot_data(main_line2,signals2,selected_stock[1]))
         figs.append(plot_data(main_line3,signals3,selected_stock[2]))
         figs.append(plot_data(main_line4,signals4,selected_stock[3]))
-        figs.append(plot_data(main_line5,signals5,selected_stock[4]))
+        #figs.append(plot_data(main_line5,signals5,selected_stock[4]))
         
         st.write("")
         st.write("")
