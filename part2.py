@@ -83,14 +83,8 @@ class stock_prediction(HydraHeadApp):
 
         #################################################################
 
-         #predicted results
-
-        df_forecast1=get_predictions(df1)
-        df_forecast2=get_predictions(df2)
-        df_forecast3=get_predictions(df3)
-        df_forecast4=get_predictions(df4)
-        df_forecast5=get_predictions(df5)
-
-
-
-        st.write(df_forecast5)
+         #variables for training
+         cols=list(df1)[1:11]
+         df_for_training=df1[cols].astype(float)
+         train_dates=pd.to_datetime(df1['Date'])
+         st.write(df_for_training)
