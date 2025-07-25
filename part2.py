@@ -10,7 +10,7 @@ import plotly.graph_objs as go
 import plotly.io as pio
 from plotly.offline import init_notebook_mode,iplot
 from today_signal import today_signal
-from get_data import get_self_made_data_frame
+#from get_data import get_self_made_data_frame
 #from get_predictions import get_predictions
 #from get_plot_data import get_plot_data1, get_plot_data2
 ###import to Hydralit
